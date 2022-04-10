@@ -1,0 +1,18 @@
+.nav__list {
+  @include flex-box();
+  width: 443px;
+  list-style: none;
+  padding-inline-start: 0;
+  a {
+    color: $color-light-s;
+    text-decoration: none;
+  }
+}
+
+.nav__link_active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #F1CDB3;
+  display: block;
+}

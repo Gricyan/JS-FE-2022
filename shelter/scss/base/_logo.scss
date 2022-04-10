@@ -1,0 +1,17 @@
+.logo {
+  color: $color-primary;
+}
+
+.logo__title {
+  @extend %font-additional;
+  @include font(3.2rem, 3.52rem, $weight: 400);
+  letter-spacing: 0.06em;
+}
+
+.logo__subtitle {
+  padding-top: 10px;
+  @extend %font-primary;
+  @include font(1.3rem, 1.5rem, $weight: 400);
+  letter-spacing: 0.1em;
+  text-align: center;
+}
