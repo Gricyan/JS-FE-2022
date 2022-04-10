@@ -541,7 +541,6 @@ h5 {
 }
 
 .logo {
-  color: #f1cdb3;
   cursor: pointer;
 }
 
@@ -550,6 +549,7 @@ h5 {
   font-weight: 400;
   font-style: normal;
   line-height: 3.52rem;
+  color: #f1cdb3;
   letter-spacing: 0.06em;
 }
 
@@ -559,6 +559,7 @@ h5 {
   font-weight: 400;
   font-style: normal;
   line-height: 1.5rem;
+  color: #ffffff;
   letter-spacing: 0.1em;
   text-align: center;
 }
@@ -586,6 +587,42 @@ h5 {
   font-weight: 700;
 }
 /* Components */
+.about {
+  min-height: 558px;
+  background-color: #ffffff;
+}
+
+.about__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.about__container img {
+  display: block;
+  max-width: 300px;
+  margin: 3% 0% 0% 29%;
+}
+
+.about-wrapper {
+  width: 1280px;
+  margin: auto;
+  padding: 60px 40px;
+}
+
+.about__image {
+  width: 40px;
+}
+
+.about__header {
+  width: 370px;
+  letter-spacing: 0.06em;
+}
+
+.about__text {
+  width: 430px;
+}
+
 .intro {
   min-height: 908px;
   background: url(../../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
@@ -665,6 +702,10 @@ h5 {
 }
 
 /* Layouts */
+.layout-2-columns > * {
+  width: 50%;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

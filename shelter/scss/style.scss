@@ -16,9 +16,11 @@
 
 /* Components */
 
+@import "components/about";
 @import "components/intro";
 @import "components/navigation";
 
 /* Layouts */
 
+@import "layouts/columns";
 @import "layouts/header";

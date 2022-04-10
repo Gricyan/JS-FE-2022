@@ -1,11 +1,11 @@
 .logo {
-  color: $color-primary;
   cursor: pointer;
 }
 
 .logo__title {
   @extend %font-additional;
   @include font(3.2rem, 3.52rem, $weight: 400);
+  color: $color-primary;
   letter-spacing: 0.06em;
 }
 
@@ -13,6 +13,7 @@
   padding-top: 10px;
   @extend %font-primary;
   @include font(1.3rem, 1.5rem, $weight: 400);
+  color: $color-light-xs;
   letter-spacing: 0.1em;
   text-align: center;
 }

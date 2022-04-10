@@ -1,0 +1,32 @@
+.about {
+  min-height: 558px;
+  background-color: $color-light-xs;
+}
+
+.about__container {
+  @include flex-box($align: flex-start);
+  img {
+    display: block;
+    max-width: 300px;
+    margin: 3% 0% 0% 29%;
+  }
+}
+
+.about-wrapper {
+  width: $desktop-width;
+  margin: auto;
+  padding: 60px 40px;
+}
+
+.about__image {
+  width: 40px;
+}
+
+.about__header {
+  width: 370px;
+  letter-spacing: 0.06em;
+}
+
+.about__text {
+  width: 430px;
+}
