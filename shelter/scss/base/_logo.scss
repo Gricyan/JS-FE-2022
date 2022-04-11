@@ -13,7 +13,7 @@
   padding-top: 10px;
   @extend %font-primary;
   @include font(1.3rem, 1.5rem, $weight: 400);
-  color: $color-light-xs;
+  color: $color-light-xl;
   letter-spacing: 0.1em;
   text-align: center;
 }

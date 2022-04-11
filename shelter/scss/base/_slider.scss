@@ -1,0 +1,63 @@
+.slider__arrow {
+  content: "";
+  @include flex-box($flex: inline-flex);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  background-position: center;
+  background-repeat: no-repeat;
+  @extend %transition;
+  &:hover {
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+  }
+}
+
+.slider__arrow_left {
+  background-image: url(../../assets/icons/arrow-left.svg);
+}
+
+.slider__arrow_right {
+  background-image: url(../../assets/icons/arrow-right.svg);
+}
+
+.slider__cards {
+  width: 990px;
+  @include flex-box();
+}
+
+.slider__card {
+  @include flex-box();
+  flex-direction: column;
+  width: 270px;
+  height: 435px;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  @extend %transition;
+  &:hover {
+    box-shadow: 0px 5px 30px 15px #2929290b;
+  }
+}
+
+.slider__title {
+  @extend %font-additional;
+  @include font(2rem, 2.27rem, $weight: 400);
+  letter-spacing: 0.06em;
+  color: $color-dark-l;
+}
+
+.slider__button {
+  width: 187px;
+  margin-bottom: 30px;
+  padding: 13px;
+  @extend %font-additional;
+  @include font(1.7rem, 2.2rem, $weight: 400);
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+  @extend %transition;
+  &:hover {
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+  }
+}

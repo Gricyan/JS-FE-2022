@@ -12,13 +12,15 @@
 @import "base/base";
 @import "base/buttons";
 @import "base/logo";
+@import "base/slider";
 @import "base/typography";
 
 /* Components */
 
-@import "components/about";
-@import "components/intro";
 @import "components/navigation";
+@import "components/intro";
+@import "components/about";
+@import "components/pets";
 
 /* Layouts */
 
