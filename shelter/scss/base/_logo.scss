@@ -3,6 +3,7 @@
 }
 
 .logo__title {
+  margin: 0;
   @extend %font-additional;
   @include font(3.2rem, 3.52rem, $weight: 400);
   color: $color-primary;
@@ -14,4 +15,15 @@
   @include font(1.3rem, 1.5rem, $weight: 400, $spacing: 0.1em);
   color: $color-light-xl;
   text-align: center;
+}
+
+
+/* Our pets page */
+
+.our-pets .logo__title {
+  color: $color-dark-l;
+}
+
+.our-pets .logo__subtitle {
+  color: $color-dark-3xl;
 }

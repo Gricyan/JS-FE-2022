@@ -27,8 +27,25 @@
   background-color: $color-primary;
   color: $color-dark-3xl;
   @extend %transition;
+  cursor: pointer;
   &:hover {
     border: 2px solid $color-primary-light;
     background-color: $color-primary-light;
   }
+}
+
+
+/* pets page */
+
+.our-pets {
+  .pets {
+    height: 1342px;
+    background-color: #F6F6F6;
+  }
+}
+
+.pets__gallery {
+  @include flex-box($wrap: wrap);
+  margin-top: 59px;
+  row-gap: 30px;
 }

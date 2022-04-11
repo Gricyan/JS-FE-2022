@@ -5,11 +5,107 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pets</title>
+  <title>Our pets</title>
+  <link rel="stylesheet" href="../scss/style.css">
 </head>
 
-<body>
-
+<body class="our-pets">
+  <header class="header header-wrapper">
+    <div class="logo">
+      <h1 class="logo__title">Cozy House</h1>
+      <div class="logo__subtitle">Shelter for pets in Boston</div>
+    </div>
+    <div class="nav">
+      <ul class="nav__list">
+        <li class="nav__link"><a href="#about">About the shelter</a></li>
+        <li class="nav__link nav__link_active"><a href="#pets">Our pets</a></li>
+        <li class="nav__link"><a href="#help">Help the shelter</a></li>
+        <li class="nav__link"><a href="#contacts">Contacts</a></li>
+      </ul>
+    </div>
+  </header>
+  <main class="pets" id="pets">
+    <div class="pets__container pets-wrapper">
+      <h3 class="pets__header">Our friends who<br> are looking for a house</h3>
+      <div class="pets__gallery gallery-slider">
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-katrine.png" alt="pet Katrine">
+          <div class="slider__title">Katrine</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-jennifer.png" alt="pet Jennifer">
+          <div class="slider__title">Jennifer</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-woody.png" alt="pet Woody">
+          <div class="slider__title">Woody</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-sophia.png" alt="pet Sophia">
+          <div class="slider__title">Sophia</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-timmy.png" alt="pet Timmy" />
+          <div class="slider__title">Timmy</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-charly.png" alt="pet Charly">
+          <div class="slider__title">Charly</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-scarlet.png" alt="pet Scarlet">
+          <div class="slider__title">Scarlett</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+        <div class="slider__card">
+          <img src="../assets/img/slider-images/pets-freddie.png" alt="pet Freddie">
+          <div class="slider__title">Freddie</div>
+          <a href="#" class="button slider__button">Learn more</a>
+        </div>
+      </div>
+      <div class="gallery-paginator__container">
+        <div class="slider__arrow paginator_pre-pre paginator_inactive"></div>
+        <div class="slider__arrow paginator_pre paginator_inactive"></div>
+        <div class="slider__arrow paginator_current">
+          <h4 class="current-page-number">1</h4>
+        </div>
+        <div class="slider__arrow paginator_next paginator_active"></div>
+        <div class="slider__arrow paginator_next-next paginator_active"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" id="contacts">
+    <div class="footer__container footer-wrapper">
+      <div class="footer__column">
+        <h3 class="footer__header">For questions and suggestions</h3>
+        <div class="footer__contacts grid-contacts">
+          <span class="contact-icon email"></span>
+          <h4 class="footer__email"><a href="mailto:email@shelter.com">email@shelter.com</a></h4>
+          <span class="contact-icon tel"></span>
+          <h4 class="footer__tel"><a href="tel:+136745677554">+13 674 567 75 54</a></h4>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h3 class="footer__header">We are waiting for your visit</h3>
+        <div class="footer__locations grid-locations">
+          <span class="contact-icon marker"></span>
+          <h4 class="footer__address"><a href="https://goo.gl/maps/mKLJtTozztXDbpe8A" target="_blank">1 Central Street, Boston (entrance from the store)</a></h4>
+          <span class="contact-icon marker"></span>
+          <h4 class="footer__address"><a href="https://goo.gl/maps/tPA5JDNuSEajM9Sm6" target="_blank">18 South Park, London</a></h4>
+        </div>
+      </div>
+      <div class="footer__column">
+        <div class="footer__image"></div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/pets.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,33 @@
+.gallery-paginator__container {
+  width: 340px;
+  @include flex-box();
+  margin: 60px auto;
+}
+
+.paginator_pre-pre {
+  background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
+}
+
+.paginator_pre {
+  background-image: url(../assets/icons/paginator-icons/pre.svg);
+}
+
+.paginator_next {
+  background-image: url(../assets/icons/paginator-icons/next.svg);
+}
+
+.paginator_next-next {
+  background-image: url(../assets/icons/paginator-icons/next-next.svg);
+}
+
+.paginator_inactive {
+  border: 2px solid $color-dark-s;
+  &:hover {
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+  }
+}
+
+.paginator_current {
+  background-color: $color-primary;
+}
