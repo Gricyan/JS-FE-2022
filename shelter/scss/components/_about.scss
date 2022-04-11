@@ -6,27 +6,23 @@
 .about__container {
   @include flex-box($align: flex-start);
   img {
-    display: block;
-    max-width: 300px;
-    margin: 3% 0% 0% 29%;
+    padding-top: 20px;
   }
 }
 
 .about-wrapper {
   width: $desktop-width;
   margin: auto;
-  padding: 60px 40px;
-}
-
-.about__image {
-  width: 40px;
+  padding: 60px 215px;
 }
 
 .about__header {
   width: 370px;
+  margin-bottom: 0;
   letter-spacing: 0.06em;
 }
 
 .about__text {
   width: 430px;
+  margin: 23px 0 25px;
 }
