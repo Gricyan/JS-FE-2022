@@ -1,6 +1,6 @@
 .slider__arrow {
   content: "";
-  @include flex-box($flex: inline-flex);
+  @include flex-box($flex: inline-flex, $justify: center);
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -16,11 +16,11 @@
 }
 
 .slider__arrow_left {
-  background-image: url(../../assets/icons/slider-icons/arrow-left.svg);
+  background-image: url(../assets/icons/slider-icons/arrow-left.svg);
 }
 
 .slider__arrow_right {
-  background-image: url(../../assets/icons/slider-icons/arrow-right.svg);
+  background-image: url(../assets/icons/slider-icons/arrow-right.svg);
 }
 
 .slider__cards {

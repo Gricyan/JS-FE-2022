@@ -573,10 +573,44 @@ h5 {
   color: #292929;
 }
 
+.logo {
+  cursor: pointer;
+}
+
+.logo__title {
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 3.52rem;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+.logo__subtitle {
+  padding-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Our pets page */
+.our-pets .logo__title {
+  color: #545454;
+}
+
+.our-pets .logo__subtitle {
+  color: #292929;
+}
+
 .slider__arrow {
   content: "";
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: nowrap;
   align-items: center;
   width: 52px;
@@ -593,11 +627,11 @@ h5 {
 }
 
 .slider__arrow_left {
-  background-image: url(../../assets/icons/slider-icons/arrow-left.svg);
+  background-image: url(../assets/icons/slider-icons/arrow-left.svg);
 }
 
 .slider__arrow_right {
-  background-image: url(../../assets/icons/slider-icons/arrow-right.svg);
+  background-image: url(../assets/icons/slider-icons/arrow-right.svg);
 }
 
 .slider__cards {
@@ -648,6 +682,43 @@ h5 {
 .slider__button:hover {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
+}
+
+.gallery-paginator__container {
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 60px auto;
+}
+
+.paginator_pre-pre {
+  background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
+}
+
+.paginator_pre {
+  background-image: url(../assets/icons/paginator-icons/pre.svg);
+}
+
+.paginator_next {
+  background-image: url(../assets/icons/paginator-icons/next.svg);
+}
+
+.paginator_next-next {
+  background-image: url(../assets/icons/paginator-icons/next-next.svg);
+}
+
+.paginator_inactive {
+  border: 2px solid #cdcdcd;
+}
+.paginator_inactive:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+}
+
+.paginator_current {
+  background-color: #f1cdb3;
 }
 
 @font-face {
@@ -845,6 +916,21 @@ h5 {
 .pets__button-primary:hover {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
+}
+
+/* pets page */
+.our-pets .pets {
+  height: 1342px;
+  background-color: #F6F6F6;
+}
+
+.pets__gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 59px;
+  row-gap: 30px;
 }
 
 .help {
