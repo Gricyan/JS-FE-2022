@@ -1,0 +1,70 @@
+.donation {
+  height: 462px;
+  background-color: $color-light-l;
+}
+
+.donation-wrapper {
+  width: $desktop-width;
+  margin: auto;
+  padding: 45px 40px;
+}
+
+.donation__container {
+  @include flex-box($justify: center);
+  column-gap: 30px;
+}
+
+.donation__img {
+  width: 505px;
+  height: 261px;
+  background-image: url(../../assets/img/donation-dog.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.donation__content {
+  width: 380px;
+  color: $color-dark-l;
+}
+
+.donation__header {
+  margin-bottom: 0;
+  letter-spacing: 0.06em;
+}
+
+.donation__subheader {
+  margin: 20px 0;
+  letter-spacing: 0.06em;
+}
+
+.donation__card {
+  @include flex-box($justify: center);
+  width: 349px;
+  height: 43px;
+  background-color: $color-primary;
+  border-radius: 9px;
+}
+
+.donation__card-icon {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 23px;
+  background-image: url("../../assets/icons/donation-icons/credit-card.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.donation__card-number {
+  display: inline-block;
+  margin-left: 15px;
+  letter-spacing: 0.06em;
+}
+
+.donation__legal-text {
+  margin: 20px 0 35px;
+  @include font(1.2rem,
+  1.8rem,
+  $style: italic);
+  color: $color-dark-m;
+}
