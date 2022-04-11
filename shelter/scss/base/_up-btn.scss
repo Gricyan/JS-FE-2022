@@ -11,4 +11,7 @@
   cursor: pointer;
   transform: translateY(200%);
   @extend %transition;
+  &:hover {
+    filter: brightness(0.98);
+  }
 }
