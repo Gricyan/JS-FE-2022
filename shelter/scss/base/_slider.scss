@@ -15,11 +15,11 @@
 }
 
 .slider__arrow_left {
-  background-image: url(../../assets/icons/arrow-left.svg);
+  background-image: url(../../assets/icons/slider-icons/arrow-left.svg);
 }
 
 .slider__arrow_right {
-  background-image: url(../../assets/icons/arrow-right.svg);
+  background-image: url(../../assets/icons/slider-icons/arrow-right.svg);
 }
 
 .slider__cards {
@@ -43,7 +43,6 @@
 .slider__title {
   @extend %font-additional;
   @include font(2rem, 2.27rem, $weight: 400);
-  letter-spacing: 0.06em;
   color: $color-dark-l;
 }
 
@@ -53,7 +52,6 @@
   padding: 13px;
   @extend %font-additional;
   @include font(1.7rem, 2.2rem, $weight: 400);
-  letter-spacing: 0.06em;
   color: $color-dark-3xl;
   @extend %transition;
   &:hover {
