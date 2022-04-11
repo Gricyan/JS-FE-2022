@@ -12,11 +12,6 @@ body {
   @include font(1.5rem, 2.4rem, $spacing: 0);
 }
 
-h1 {
-  @extend %font-additional;
-  @include font(5rem, 6rem, $weight: 700);
-}
-
 h2 {
   @extend %font-additional;
   @include font(4.4rem, 5.72rem, $spacing: 0);

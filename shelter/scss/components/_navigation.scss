@@ -35,3 +35,21 @@
     width: 100%;
   }
 }
+
+
+/* Our pets page */
+
+.our-pets .nav__list {
+  a {
+    color: $color-dark-l;
+    &:hover {
+      color: $color-dark-3xl;
+    }
+  }
+}
+
+.our-pets .nav__link_active {
+  a {
+    color: $color-dark-3xl;
+  }
+}

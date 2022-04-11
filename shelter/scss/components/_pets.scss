@@ -27,6 +27,7 @@
   background-color: $color-primary;
   color: $color-dark-3xl;
   @extend %transition;
+  cursor: pointer;
   &:hover {
     border: 2px solid $color-primary-light;
     background-color: $color-primary-light;
