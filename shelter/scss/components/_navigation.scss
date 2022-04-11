@@ -1,0 +1,37 @@
+.nav__list {
+  @include flex-box($align: flex-start);
+  width: 443px;
+  list-style: none;
+  padding-inline-start: 0;
+  a {
+    color: $color-dark-s;
+    text-decoration: none;
+    @extend %transition;
+  }
+}
+
+.nav__link {
+  &::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 3px;
+    background: $color-primary;
+    @extend %transition;
+  }
+  a:hover {
+    color: $color-light-s;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.nav__link_active {
+  a {
+    color: $color-light-s;
+  }
+  &::after {
+    width: 100%;
+  }
+}

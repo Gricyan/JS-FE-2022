@@ -1,0 +1,9 @@
+.header {
+  @include flex-box();
+}
+
+.header-wrapper {
+  width: $desktop-width;
+  margin: auto;
+  padding: 60px 40px;
+}

@@ -1,0 +1,14 @@
+@mixin font($size, $height, $weight: 400, $style: normal, $spacing: 0.06em) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+
+@mixin flex-box ($flex: flex, $justify: space-between, $wrap: nowrap, $align: center) {
+  display: $flex;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  align-items: $align;
+}
