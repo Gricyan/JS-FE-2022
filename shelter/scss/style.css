@@ -695,10 +695,18 @@ h5 {
 
 .paginator_pre-pre {
   background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
+  background-size: 25px 11px;
+}
+.paginator_pre-pre:hover {
+  background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
 }
 
 .paginator_pre {
   background-image: url(../assets/icons/paginator-icons/pre.svg);
+  background-size: 11px;
+}
+.paginator_pre:hover {
+  background-image: url(../assets/icons/paginator-icons/pre-active.svg);
 }
 
 .paginator_next {
@@ -755,6 +763,9 @@ h5 {
   background-position: center;
   cursor: pointer;
   transform: translateY(200%);
+}
+.up-btn:hover {
+  filter: brightness(0.98);
 }
 
 /* Components */
@@ -846,7 +857,7 @@ h5 {
 .intro__content .intro__button:hover {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
-  box-shadow: 0px 0px 10px 10px rgba(24, 18, 23, 0.5);
+  box-shadow: 0px 0px 10px 10px rgba(24, 18, 23, 0.2);
 }
 
 .about {
@@ -1016,7 +1027,7 @@ h5 {
 }
 
 .donation {
-  height: 462px;
+  height: 461px;
   background-color: #F6F6F6;
 }
 
@@ -1136,7 +1147,7 @@ h5 {
 }
 
 .footer__header {
-  margin-bottom: 0;
+  margin: 37px 0 0;
   color: #ffffff;
 }
 
