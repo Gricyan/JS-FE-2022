@@ -7,17 +7,17 @@
 .paginator_pre-pre {
   background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
   background-size: 25px 11px;
-  &:hover {
-    background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
-  }
+  // &:hover {
+  //   background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
+  // }
 }
 
 .paginator_pre {
   background-image: url(../assets/icons/paginator-icons/pre.svg);
   background-size: 11px;
-  &:hover {
-    background-image: url(../assets/icons/paginator-icons/pre-active.svg);
-  }
+  // &:hover {
+  //   background-image: url(../assets/icons/paginator-icons/pre-active.svg);
+  // }
 }
 
 .paginator_next {
@@ -30,12 +30,13 @@
 
 .paginator_inactive {
   border: 2px solid $color-dark-s;
-  &:hover {
-    border: 2px solid $color-primary-light;
-    background-color: $color-primary-light;
-  }
+  // &:hover {
+  //   border: 2px solid $color-primary-light;
+  //   background-color: $color-primary-light;
+  // }
 }
 
 .paginator_current {
   background-color: $color-primary;
+  cursor: default;
 }
