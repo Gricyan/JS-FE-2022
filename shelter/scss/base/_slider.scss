@@ -1,4 +1,4 @@
-.slider__arrow {
+.rounded-btn {
   content: "";
   @include flex-box($flex: inline-flex, $justify: center);
   width: 52px;
@@ -7,11 +7,12 @@
   border: 2px solid $color-primary;
   background-position: center;
   background-repeat: no-repeat;
-  @extend %transition;
-  cursor: pointer;
-  &:hover {
-    border: 2px solid $color-primary-light;
-    background-color: $color-primary-light;
+  &.rounded-btn_active {
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+    }
   }
 }
 

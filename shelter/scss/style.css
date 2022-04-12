@@ -460,7 +460,7 @@ template {
   font-family: "Georgia", serif;
 }
 
-.footer__container h4 a, .donation__card, .list-item__img, .pets__button-primary, .intro__content .intro__button, .nav__link::after, .nav__list a, .up-btn, .slider__button, .slider__card, .slider__arrow {
+.footer__container h4 a, .donation__card, .list-item__img, .pets__button-primary, .intro__content .intro__button, .nav__link::after, .nav__list a, .up-btn, .slider__button, .slider__card {
   transition: all 0.3s ease-out;
 }
 
@@ -607,7 +607,7 @@ h5 {
   color: #292929;
 }
 
-.slider__arrow {
+.rounded-btn {
   content: "";
   display: inline-flex;
   justify-content: center;
@@ -619,9 +619,9 @@ h5 {
   border: 2px solid #f1cdb3;
   background-position: center;
   background-repeat: no-repeat;
-  cursor: pointer;
 }
-.slider__arrow:hover {
+.rounded-btn.rounded-btn_active:hover {
+  cursor: pointer;
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
 }
@@ -697,16 +697,10 @@ h5 {
   background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
   background-size: 25px 11px;
 }
-.paginator_pre-pre:hover {
-  background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
-}
 
 .paginator_pre {
   background-image: url(../assets/icons/paginator-icons/pre.svg);
   background-size: 11px;
-}
-.paginator_pre:hover {
-  background-image: url(../assets/icons/paginator-icons/pre-active.svg);
 }
 
 .paginator_next {
@@ -720,13 +714,10 @@ h5 {
 .paginator_inactive {
   border: 2px solid #cdcdcd;
 }
-.paginator_inactive:hover {
-  border: 2px solid #fddcc4;
-  background-color: #fddcc4;
-}
 
 .paginator_current {
   background-color: #f1cdb3;
+  cursor: default;
 }
 
 @font-face {
@@ -879,6 +870,10 @@ h5 {
   width: 1280px;
   margin: auto;
   padding: 60px 215px;
+}
+
+.about__content {
+  color: #545454;
 }
 
 .about__header {
