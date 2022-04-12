@@ -11,6 +11,13 @@
 
 /* Our pets page */
 
+.header-container {
+  width: 100%;
+  position: fixed;
+  background-color: $color-light-xl;
+  top: 0;
+}
+
 .our-pets .header-wrapper {
   width: $desktop-width;
   margin: auto;

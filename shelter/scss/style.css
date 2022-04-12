@@ -927,6 +927,7 @@ h5 {
 /* pets page */
 .our-pets .pets {
   height: 1342px;
+  margin-top: 120px;
   background-color: #F6F6F6;
 }
 
@@ -1227,6 +1228,13 @@ h5 {
 }
 
 /* Our pets page */
+.header-container {
+  width: 100%;
+  position: fixed;
+  background-color: #ffffff;
+  top: 0;
+}
+
 .our-pets .header-wrapper {
   width: 1280px;
   margin: auto;
