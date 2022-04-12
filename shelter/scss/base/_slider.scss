@@ -39,7 +39,12 @@
   @extend %transition;
   cursor: pointer;
   &:hover {
-    box-shadow: 0px 5px 30px 15px #2929290b;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    background-color: $color-light-xl;
+    .slider__button {
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+    }
   }
 }
 
@@ -58,8 +63,4 @@
   color: $color-dark-3xl;
   @extend %transition;
   cursor: pointer;
-  &:hover {
-    border: 2px solid $color-primary-light;
-    background-color: $color-primary-light;
-  }
 }
