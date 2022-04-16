@@ -5,6 +5,9 @@
 
 .pets-wrapper {
   @include wrapper($top: 45, $side: 40, $bottom: 45);
+  @include media-laptop {
+    padding: 45px 30px 45px;
+  }
 }
 
 .pets__header {

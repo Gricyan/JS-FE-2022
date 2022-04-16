@@ -1,15 +1,23 @@
 .donation {
-  height: 461px;
+  min-height: 461px;
   background-color: $color-light-l;
 }
 
 .donation-wrapper {
   @include wrapper($top: 45, $side: 40, $bottom: 45);
+  @include media-laptop {
+    padding: 45px 40px 99px;
+  }
 }
 
 .donation__container {
   @include flex-box($justify: center);
   column-gap: 30px;
+  @include media-laptop {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    row-gap: 25px;
+  }
 }
 
 .donation__img {
@@ -18,6 +26,7 @@
   background-image: url(../assets/img/donation-dog.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .donation__content {

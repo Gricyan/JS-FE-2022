@@ -502,7 +502,7 @@ h4 {
   font-size: 2rem;
   font-weight: 400;
   font-style: normal;
-  line-height: 2.3rem;
+  line-height: 2.4rem;
   letter-spacing: 0.06em;
 }
 
@@ -926,6 +926,19 @@ h5 {
   align-items: flex-start;
   column-gap: 10%;
 }
+@media (max-width: 1279.98px) {
+  .about__container {
+    column-gap: 3%;
+  }
+}
+@media (max-width: 960px) {
+  .about__container {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 35px;
+  }
+}
 .about__container img {
   padding-top: 20px;
 }
@@ -934,6 +947,11 @@ h5 {
   max-width: 1279.98px;
   margin: auto;
   padding: 60px 40px 60px;
+}
+@media (max-width: 960px) {
+  .about-wrapper {
+    padding: 45px 30px 95px;
+  }
 }
 
 .about__content {
@@ -959,6 +977,11 @@ h5 {
   max-width: 1279.98px;
   margin: auto;
   padding: 45px 40px 45px;
+}
+@media (max-width: 960px) {
+  .pets-wrapper {
+    padding: 45px 30px 45px;
+  }
 }
 
 .pets__header {
@@ -1010,7 +1033,7 @@ h5 {
 }
 
 .help {
-  height: 611px;
+  min-height: 611px;
   background-color: #ffffff;
 }
 
@@ -1018,6 +1041,16 @@ h5 {
   max-width: 1279.98px;
   margin: auto;
   padding: 45px 40px 45px;
+}
+@media (max-width: 960px) {
+  .help-wrapper {
+    padding: 45px 30px 45px;
+  }
+}
+@media (max-width: 768px) {
+  .help-wrapper {
+    padding: 45px 30px 75px;
+  }
 }
 
 .help__header {
@@ -1035,7 +1068,17 @@ h5 {
 }
 @media (max-width: 1279.98px) {
   .help__list {
-    gap: 33px 80px;
+    gap: 30px 80px;
+  }
+}
+@media (max-width: 960px) {
+  .help__list {
+    gap: 30px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .help__list {
+    gap: 30px 60px;
   }
 }
 
@@ -1045,6 +1088,11 @@ h5 {
   flex-wrap: nowrap;
   align-items: center;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  .help__list-item {
+    width: 170px;
+  }
 }
 
 .list-item__img {
@@ -1097,7 +1145,7 @@ h5 {
 }
 
 .donation {
-  height: 461px;
+  min-height: 461px;
   background-color: #F6F6F6;
 }
 
@@ -1105,6 +1153,11 @@ h5 {
   max-width: 1279.98px;
   margin: auto;
   padding: 45px 40px 45px;
+}
+@media (max-width: 960px) {
+  .donation-wrapper {
+    padding: 45px 40px 99px;
+  }
 }
 
 .donation__container {
@@ -1114,6 +1167,13 @@ h5 {
   align-items: center;
   column-gap: 30px;
 }
+@media (max-width: 960px) {
+  .donation__container {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    row-gap: 25px;
+  }
+}
 
 .donation__img {
   width: 505px;
@@ -1121,6 +1181,7 @@ h5 {
   background-image: url(../assets/img/donation-dog.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .donation__content {
@@ -1181,7 +1242,7 @@ h5 {
 
 .footer {
   min-height: 350px;
-  background: url(../../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url(../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer-wrapper {
@@ -1189,13 +1250,24 @@ h5 {
   margin: auto;
   padding: 20px 40px 0px;
 }
+@media (max-width: 960px) {
+  .footer-wrapper {
+    padding: 20px 30px 0px;
+  }
+}
 
 .footer__container {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: start;
-  height: 350px;
+  min-height: 350px;
+}
+@media (max-width: 960px) {
+  .footer__container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 .footer__container h4 {
   display: inline-block;
@@ -1212,8 +1284,26 @@ h5 {
 .footer__column {
   width: 25%;
 }
+@media (max-width: 960px) {
+  .footer__column:nth-of-type(1) {
+    width: 50%;
+    padding: 0 35px;
+  }
+}
 .footer__column:nth-of-type(2) {
   margin-right: 2%;
+}
+@media (max-width: 960px) {
+  .footer__column:nth-of-type(2) {
+    width: 50%;
+    margin-right: 0;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 960px) {
+  .footer__column:nth-of-type(3) {
+    width: 100%;
+  }
 }
 @media (max-width: 1279.98px) {
   .footer__column {
@@ -1227,6 +1317,11 @@ h5 {
 .footer__header {
   margin: 37px 0 0;
   color: #ffffff;
+}
+@media (max-width: 960px) {
+  .footer__header {
+    margin: 10px 0 0;
+  }
 }
 
 .footer__contacts {
@@ -1270,10 +1365,16 @@ h5 {
   content: "";
   display: block;
   width: 300px;
-  height: 330px;
+  min-height: 330px;
+  margin: auto;
   background-image: url(../assets/img/footer-puppy.png);
   background-repeat: no-repeat;
   background-position: bottom;
+}
+@media (max-width: 960px) {
+  .footer__image {
+    min-height: 365px;
+  }
 }
 
 /* Layouts */

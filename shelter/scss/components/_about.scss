@@ -6,9 +6,15 @@
 .about__container {
   @include flex-box($justify: center, $align: flex-start);
   column-gap: 10%;
-  // @include media-desktop {
-  //   margin-top: 85px;
-  // }
+  @include media-desktop {
+    column-gap: 3%;
+  }
+  @include media-laptop {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 35px;
+  }
   img {
     padding-top: 20px;
   }
@@ -16,6 +22,9 @@
 
 .about-wrapper {
   @include wrapper();
+  @include media-laptop {
+    padding: 45px 30px 95px;
+  }
 }
 
 .about__content {
