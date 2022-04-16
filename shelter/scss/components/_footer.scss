@@ -74,6 +74,11 @@
 
 .footer__locations {
   margin-top: 32px;
+  .our-pets & {
+    @include media-laptop {
+      margin-top: 28px;
+    }
+  }
 }
 
 .footer__contact-text {

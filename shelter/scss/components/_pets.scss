@@ -1,5 +1,5 @@
 .pets {
-  height: 877px;
+  min-height: 877px;
   background-color: $color-light-l;
 }
 
@@ -40,9 +40,14 @@
 
 .our-pets {
   .pets {
-    height: 1342px;
+    min-height: 1342px;
     margin-top: 120px;
     background-color: $color-light-l;
+  }
+  .pets__header {
+    @include media-laptop {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -50,10 +55,21 @@
   @include flex-box($wrap: wrap);
   margin-top: 59px;
   row-gap: 30px;
-  @include media-desktop {
-    & .slider__card:nth-of-type(-n+1),
-    & .slider__card:nth-of-type(-n+2) {
-      display: none;
-    }
+  @include media-laptop {
+    justify-content: center;
+    column-gap: 40px;
+    margin-top: 0;
+  }
+}
+
+.hidden-for-laptop {
+  @include media-laptop {
+    display: none;
+  }
+}
+
+@media (max-width: 1159.98px) {
+  .hidden-for-laptop {
+    display: none;
   }
 }

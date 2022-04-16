@@ -21,4 +21,7 @@
 
 .our-pets .header-wrapper {
   @include wrapper($top: 30, $side: 40, $bottom: 30);
+  @include media-laptop {
+    padding: 30px 30px 30px;
+  }
 }

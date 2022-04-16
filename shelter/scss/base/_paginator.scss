@@ -2,6 +2,9 @@
   width: 340px;
   @include flex-box();
   margin: 60px auto;
+  @include media-laptop {
+    margin: 38px auto 32px;
+  }
 }
 
 .paginator_pre-pre {
