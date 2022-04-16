@@ -5,10 +5,16 @@
 
 .intro-wrapper {
   @include wrapper($top: 0, $side: 40, $bottom: 0);
+  @include media-laptop {
+    padding: 0 30px 0;
+  }
 }
 
 .intro__container {
   @include flex-box($align: flex-start);
+  @include media-desktop {
+    flex-wrap: wrap;
+  }
 }
 
 .intro__content {
@@ -16,6 +22,10 @@
   margin-top: 127px;
   @include media-desktop {
     margin-top: 85px;
+  }
+  @include media-laptop {
+    width: 65%;
+    margin: 0 auto;
   }
   .intro__header {
     max-width: 310px;
@@ -34,6 +44,11 @@
     margin-top: 42px;
     background-color: $color-primary;
     @extend %transition;
+    @include media-laptop {
+      margin: 42px auto;
+      display: block;
+      width: 208px;
+    }
     &:hover {
       border: 2px solid $color-primary-light;
       background-color: $color-primary-light;
@@ -45,8 +60,18 @@
 .intro__image {
   width: 58%;
   line-height: 0;
+  @include media-laptop {
+    width: 100%;
+  }
   img {
     width: 100%;
     margin-top: 0.2rem;
+    @include media-laptop {
+      width: 100%;
+      max-width: 80%;
+      margin-top: 6rem;
+      margin-left: auto;
+      display: block;
+    }
   }
 }

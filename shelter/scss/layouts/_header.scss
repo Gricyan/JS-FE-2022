@@ -4,6 +4,9 @@
 
 .header-wrapper {
   @include wrapper();
+  @include media-laptop {
+    padding: 30px 30px 25px;
+  }
 }
 
 

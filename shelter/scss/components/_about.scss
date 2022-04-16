@@ -5,7 +5,7 @@
 
 .about__container {
   @include flex-box($justify: center, $align: flex-start);
-  column-gap: 120px;
+  column-gap: 10%;
   // @include media-desktop {
   //   margin-top: 85px;
   // }
