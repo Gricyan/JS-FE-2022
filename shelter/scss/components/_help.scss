@@ -23,20 +23,21 @@
   gap: 33px 120px;
   margin-top: 60px;
   @include media-desktop {
-    gap: 30px 80px;
+    gap: 30px 15%;
   }
   @include media-laptop {
-    gap: 30px 40px;
+    gap: 30px 10%;
   }
   @include media-tablet {
-    gap: 30px 60px;
+    justify-content: space-evenly;
+    gap: 30px 3%;
   }
 }
 
 .help__list-item {
   @include flex-box($flex: inline-flex);
   flex-direction: column;
-  @include media-tablet {
+  @include media-desktop {
     width: 170px;
   }
 }
