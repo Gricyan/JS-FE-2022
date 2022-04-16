@@ -4,9 +4,7 @@
 }
 
 .donation-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 45px 40px;
+  @include wrapper($top: 45, $side: 40, $bottom: 45);
 }
 
 .donation__container {

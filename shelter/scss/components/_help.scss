@@ -4,9 +4,7 @@
 }
 
 .help-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 45px 40px;
+  @include wrapper($top: 45, $side: 40, $bottom: 45);
 }
 
 .help__header {
@@ -18,6 +16,9 @@
   @include flex-box($justify: center, $wrap: wrap);
   gap: 33px 120px;
   margin-top: 60px;
+  @include media-desktop {
+    gap: 33px 80px;
+  }
 }
 
 .help__list-item {

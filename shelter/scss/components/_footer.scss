@@ -4,9 +4,7 @@
 }
 
 .footer-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 20px 40px 0;
+  @include wrapper($top: 20, $bottom: 0);
 }
 
 .footer__container {
@@ -31,6 +29,12 @@
   &:nth-of-type(2) {
     margin-right: 2%;
   }
+  @include media-desktop {
+    width: 32%;
+    &:nth-of-type(2) {
+      margin-right: 0;
+    }
+  }
 }
 
 .footer__header {
@@ -39,11 +43,11 @@
 }
 
 .footer__contacts {
-  margin-top: 40px;
+  margin-top: 38px;
 }
 
 .footer__locations {
-  margin-top: 33px;
+  margin-top: 32px;
 }
 
 .footer__contact-text {

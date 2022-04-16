@@ -4,16 +4,18 @@
 }
 
 .about__container {
-  @include flex-box($align: flex-start);
+  @include flex-box($justify: center, $align: flex-start);
+  column-gap: 120px;
+  // @include media-desktop {
+  //   margin-top: 85px;
+  // }
   img {
     padding-top: 20px;
   }
 }
 
 .about-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 60px 215px;
+  @include wrapper();
 }
 
 .about__content {

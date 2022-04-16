@@ -3,9 +3,7 @@
 }
 
 .header-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 60px 40px;
+  @include wrapper();
 }
 
 
@@ -19,7 +17,5 @@
 }
 
 .our-pets .header-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 30px 40px;
+  @include wrapper($top: 30, $side: 40, $bottom: 30);
 }

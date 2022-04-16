@@ -4,9 +4,7 @@
 }
 
 .pets-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 45px 40px;
+  @include wrapper($top: 45, $side: 40, $bottom: 45);
 }
 
 .pets__header {
@@ -49,4 +47,10 @@
   @include flex-box($wrap: wrap);
   margin-top: 59px;
   row-gap: 30px;
+  @include media-desktop {
+    & .slider__card:nth-of-type(-n+1),
+    & .slider__card:nth-of-type(-n+2) {
+      display: none;
+    }
+  }
 }

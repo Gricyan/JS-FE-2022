@@ -635,11 +635,17 @@ h5 {
 }
 
 .slider__cards {
-  width: 990px;
+  max-width: 990px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
+  column-gap: 90px;
+}
+@media (max-width: 1280px) {
+  .slider__cards {
+    column-gap: 40px;
+  }
 }
 
 .slider__card {
@@ -661,6 +667,11 @@ h5 {
 .slider__card:hover .slider__button {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
+}
+@media (max-width: 1280px) {
+  .pets__slider .slider__card:last-child {
+    display: none;
+  }
 }
 
 .slider__title {
@@ -809,14 +820,13 @@ h5 {
 }
 
 .intro {
-  min-height: 908px;
-  background: url(../../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url(../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .intro-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 0 40px;
+  padding: 0px 40px 0px;
 }
 
 .intro__container {
@@ -827,10 +837,16 @@ h5 {
 }
 
 .intro__content {
+  width: 42%;
   margin-top: 127px;
 }
+@media (max-width: 1280px) {
+  .intro__content {
+    margin-top: 85px;
+  }
+}
 .intro__content .intro__header {
-  width: 310px;
+  max-width: 310px;
   color: #ffffff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-text-stroke-width: 1px;
@@ -852,6 +868,15 @@ h5 {
   box-shadow: 0px 0px 10px 10px rgba(24, 18, 23, 0.2);
 }
 
+.intro__image {
+  width: 58%;
+  line-height: 0;
+}
+.intro__image img {
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
 .about {
   min-height: 588px;
   background-color: #ffffff;
@@ -859,18 +884,19 @@ h5 {
 
 .about__container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: nowrap;
   align-items: flex-start;
+  column-gap: 120px;
 }
 .about__container img {
   padding-top: 20px;
 }
 
 .about-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 60px 215px;
+  padding: 60px 40px 60px;
 }
 
 .about__content {
@@ -893,9 +919,9 @@ h5 {
 }
 
 .pets-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 45px 40px;
+  padding: 45px 40px 45px;
 }
 
 .pets__header {
@@ -940,6 +966,11 @@ h5 {
   margin-top: 59px;
   row-gap: 30px;
 }
+@media (max-width: 1280px) {
+  .pets__gallery .slider__card:nth-of-type(-n+1), .pets__gallery .slider__card:nth-of-type(-n+2) {
+    display: none;
+  }
+}
 
 .help {
   height: 611px;
@@ -947,9 +978,9 @@ h5 {
 }
 
 .help-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 45px 40px;
+  padding: 45px 40px 45px;
 }
 
 .help__header {
@@ -964,6 +995,11 @@ h5 {
   align-items: center;
   gap: 33px 120px;
   margin-top: 60px;
+}
+@media (max-width: 1280px) {
+  .help__list {
+    gap: 33px 80px;
+  }
 }
 
 .help__list-item {
@@ -1029,9 +1065,9 @@ h5 {
 }
 
 .donation-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 45px 40px;
+  padding: 45px 40px 45px;
 }
 
 .donation__container {
@@ -1112,9 +1148,9 @@ h5 {
 }
 
 .footer-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 20px 40px 0;
+  padding: 20px 40px 0px;
 }
 
 .footer__container {
@@ -1142,6 +1178,14 @@ h5 {
 .footer__column:nth-of-type(2) {
   margin-right: 2%;
 }
+@media (max-width: 1280px) {
+  .footer__column {
+    width: 32%;
+  }
+  .footer__column:nth-of-type(2) {
+    margin-right: 0;
+  }
+}
 
 .footer__header {
   margin: 37px 0 0;
@@ -1149,11 +1193,11 @@ h5 {
 }
 
 .footer__contacts {
-  margin-top: 40px;
+  margin-top: 38px;
 }
 
 .footer__locations {
-  margin-top: 33px;
+  margin-top: 32px;
 }
 
 .footer__contact-text {
@@ -1210,7 +1254,7 @@ h5 {
   display: grid;
   grid-template-columns: 40px 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 25px 2px;
+  grid-gap: 26px 2px;
 }
 .grid-locations > * {
   align-self: center;
@@ -1224,9 +1268,9 @@ h5 {
 }
 
 .header-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 60px 40px;
+  padding: 60px 40px 60px;
 }
 
 /* Our pets page */
@@ -1238,9 +1282,9 @@ h5 {
 }
 
 .our-pets .header-wrapper {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
-  padding: 30px 40px;
+  padding: 30px 40px 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

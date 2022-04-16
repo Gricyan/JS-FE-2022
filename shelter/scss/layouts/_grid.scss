@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 40px 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 25px 2px;
+  grid-gap: 26px 2px;
   >* {
     align-self: center;
   }
