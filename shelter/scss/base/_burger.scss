@@ -3,6 +3,9 @@
   display: none;
   @include media-tablet {
     display: inline-block;
+    position: fixed;
+    top: 41px;
+    right: 53px;
   }
 }
 

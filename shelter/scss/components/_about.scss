@@ -15,8 +15,15 @@
     align-items: center;
     row-gap: 35px;
   }
+  @include media-tablet {
+    row-gap: 10px;
+  }
   img {
+    width: 100%;
     padding-top: 20px;
+    @include media-tablet {
+      padding-top: 0;
+    }
   }
 }
 
@@ -25,18 +32,39 @@
   @include media-laptop {
     padding: 45px 30px 95px;
   }
+  @include media-tablet {
+    padding: 30px 20px 60px;
+  }
+  @include media-mobile {
+    padding: 16px 10px 40px;
+  }
 }
 
 .about__content {
   color: $color-dark-l;
+  padding: 0 15px;
 }
 
 .about__header {
   width: 370px;
   margin-bottom: 0;
+  @include media-tablet {
+    width: 100%;
+    @include font(2.5rem, 3.2rem);
+    text-align: center;
+  }
 }
 
 .about__text {
-  width: 430px;
-  margin: 23px 0 25px;
+  max-width: 430px;
+  margin: 25px 0;
+  @include media-tablet {
+    text-align: justify;
+  }
+}
+
+.about__image {
+  @include media-mobile {
+    padding: 0 20px;
+  }
 }

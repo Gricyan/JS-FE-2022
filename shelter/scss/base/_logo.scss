@@ -1,5 +1,11 @@
 .logo {
   cursor: pointer;
+  // @extend %transition;
+  // &.nav__link_active {
+  //   position: fixed;
+  //   top: 30px;
+  //   left: 5%;
+  // }
 }
 
 .logo__title {

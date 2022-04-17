@@ -1,7 +1,7 @@
 .navigation {
   @extend %transition;
   @include media-tablet {
-    position: absolute;
+    position: fixed;
     width: calc(100% - 20px);
     min-width: 320px;
     min-height: 823px;
@@ -10,6 +10,7 @@
     padding-top: 250px;
     background-color: $color-dark-3xl;
     transform: translateX(1000px);
+    z-index: 1;
     &.nav__link_active {
       transform: translateX(0);
     }

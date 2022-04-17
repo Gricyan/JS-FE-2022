@@ -1,0 +1,24 @@
+.nav-wrapper {
+  display: none;
+  opacity: 0;
+  @extend %transition;
+}
+
+.nav-wrapper.nav__link_active {
+  @include media-tablet {
+    display: block;
+    position: absolute;
+    width: 100%;
+    min-height: 823px;
+    top: 0;
+    background-color: $color-dark-3xl;
+    opacity: 0.6;
+  }
+}
+
+.nav-wrapper.nav__link_active {
+  @include media-mobile-small {
+    display: none;
+    opacity: 0;
+  }
+}
