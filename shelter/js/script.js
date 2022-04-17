@@ -24,7 +24,7 @@ function toTopScroll() {
 /* Burger menu */
 
 const hamburger = document.querySelector('.burger')
-const nav = document.querySelector('.nav')
+const nav = document.querySelector('.navigation')
 const navLinks = document.querySelectorAll('.nav__link')
 
 

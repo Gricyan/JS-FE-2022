@@ -1,3 +1,21 @@
+.navigation {
+  @extend %transition;
+  @include media-tablet {
+    position: absolute;
+    width: calc(100% - 20px);
+    min-width: 320px;
+    min-height: 823px;
+    right: 0;
+    top: 0;
+    padding-top: 250px;
+    background-color: $color-dark-3xl;
+    transform: translateX(1000px);
+    &.nav__link_active {
+      transform: translateX(0);
+    }
+  }
+}
+
 .nav__list {
   @include flex-box($align: flex-start);
   width: 443px;
@@ -7,6 +25,15 @@
     color: $color-dark-s;
     text-decoration: none;
     @extend %transition;
+  }
+  @include media-tablet {
+    width: 100%;
+    flex-direction: column;
+    @include font($size: 32px, $height: 51.2px, $spacing: 0);
+    >* {
+      margin: 0 auto;
+      display: inline-block;
+    }
   }
 }
 

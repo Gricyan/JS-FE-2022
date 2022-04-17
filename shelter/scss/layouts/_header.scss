@@ -1,5 +1,16 @@
 .header {
   @include flex-box();
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
+
+.header__logo-burger {
+  @include flex-box();
+  @include media-tablet {
+    width: 100%;
+    z-index: 1;
+  }
 }
 
 .header-wrapper {
