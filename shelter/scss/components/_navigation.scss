@@ -1,3 +1,25 @@
+.navigation {
+  @extend %transition;
+  @include media-tablet {
+    position: fixed;
+    min-width: 320px;
+    min-height: 823px;
+    right: 0;
+    top: 0;
+    padding-top: 216px;
+    background-color: $color-dark-3xl;
+    transform: translateX(1000px);
+    z-index: 1;
+    &.nav__active {
+      transform: translateX(0);
+    }
+    .our-pets & {
+      background-color: $color-light-xl;
+      z-index: 1;
+    }
+  }
+}
+
 .nav__list {
   @include flex-box($align: flex-start);
   width: 443px;
@@ -7,6 +29,16 @@
     color: $color-dark-s;
     text-decoration: none;
     @extend %transition;
+  }
+  @include media-tablet {
+    width: 100%;
+    flex-direction: column;
+    row-gap: 38px;
+    @include font($size: 32px, $height: 51.2px, $spacing: 0);
+    >* {
+      margin: 0 auto;
+      display: inline-block;
+    }
   }
 }
 
@@ -25,14 +57,11 @@
   &:hover::after {
     width: 100%;
   }
-}
-
-.nav__link_active {
-  a {
+  &.nav__link_active {
     color: $color-light-s;
-  }
-  &::after {
-    width: 100%;
+    &::after {
+      width: 100%;
+    }
   }
 }
 

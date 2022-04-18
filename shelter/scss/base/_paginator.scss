@@ -1,7 +1,15 @@
 .gallery-paginator__container {
-  width: 340px;
+  max-width: 340px;
   @include flex-box();
   margin: 60px auto;
+  @include media-laptop {
+    margin: 38px auto 32px;
+  }
+  @include media-tablet {
+    margin: 41px auto 32px;
+    justify-content: center;
+    column-gap: 10px;
+  }
 }
 
 .paginator_pre-pre {

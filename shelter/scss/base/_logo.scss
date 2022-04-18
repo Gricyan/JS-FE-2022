@@ -1,5 +1,16 @@
 .logo {
   cursor: pointer;
+  @extend %transition;
+  &.nav__link_active {
+    position: fixed;
+    top: 30px;
+    @include media-tablet {
+      margin-left: calc(100vw - 320px);
+    }
+    @include media-mobile-small {
+      margin-left: 0;
+    }
+  }
 }
 
 .logo__title {

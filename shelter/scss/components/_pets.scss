@@ -1,22 +1,48 @@
 .pets {
-  height: 877px;
+  min-height: 877px;
   background-color: $color-light-l;
+  @include media-tablet {
+    min-height: auto;
+  }
 }
 
 .pets-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 45px 40px;
+  @include wrapper($top: 45, $side: 40, $bottom: 40);
+  @include media-laptop {
+    padding: 45px 30px 40px;
+  }
+  .our-pets & {
+    @include media-laptop {
+      padding: 45px 30px 45px;
+    }
+    @include media-tablet {
+      padding: 45px 10px 10px;
+    }
+  }
+  @include media-tablet {
+    padding: 15px 15px 1px;
+    overflow-x: hidden;
+  }
 }
 
 .pets__header {
   text-align: center;
   color: $color-dark-l;
+  @include media-tablet {
+    width: 100%;
+    @include font(2.5rem, 3.2rem);
+    text-align: center;
+  }
 }
 
 .pets__slider {
   @include flex-box();
   margin-top: 59px;
+  @include media-tablet {
+    position: relative;
+    margin-top: 40px;
+    min-height: 507px;
+  }
 }
 
 .pets__button-primary {
@@ -32,6 +58,9 @@
     border: 2px solid $color-primary-light;
     background-color: $color-primary-light;
   }
+  @include media-tablet {
+    margin: 43px auto;
+  }
 }
 
 
@@ -39,9 +68,17 @@
 
 .our-pets {
   .pets {
-    height: 1342px;
+    min-height: 1342px;
     margin-top: 120px;
     background-color: $color-light-l;
+    @include media-tablet {
+      margin-top: 92px;
+    }
+  }
+  .pets__header {
+    @include media-laptop {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -49,4 +86,31 @@
   @include flex-box($wrap: wrap);
   margin-top: 59px;
   row-gap: 30px;
+  @include media-laptop {
+    justify-content: center;
+    column-gap: 40px;
+    margin-top: 0;
+  }
+  @include media-tablet {
+    max-width: 300px;
+    margin: 43px auto 0;
+  }
+}
+
+.hidden-for-laptop {
+  @include media-laptop {
+    display: none;
+  }
+}
+
+@media (max-width: 1159.98px) {
+  .hidden-for-laptop {
+    display: none;
+  }
+}
+
+.hidden-for-tablet {
+  @include media-tablet {
+    display: none;
+  }
 }

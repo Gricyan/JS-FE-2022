@@ -1,0 +1,41 @@
+.burger-container {
+  width: 10%;
+  display: none;
+  @include media-tablet {
+    display: inline-block;
+    position: fixed;
+    top: 41px;
+    right: 53px;
+  }
+}
+
+.burger .line {
+  width: 30px;
+  height: 2px;
+  background-color: $color-primary;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  .our-pets & {
+    background-color: $color-dark;
+  }
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+#burger-menu {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#burger-menu.nav__link_active {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}

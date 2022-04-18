@@ -1,17 +1,25 @@
 .footer {
   min-height: 350px;
-  background: url(../../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url(../assets/img/start-bg.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer-wrapper {
-  width: $desktop-width;
-  margin: auto;
-  padding: 20px 40px 0;
+  @include wrapper($top: 20, $bottom: 0);
+  @include media-laptop {
+    padding: 20px 30px 0px;
+  }
+  @include media-tablet {
+    padding: 20px 10px 0px;
+  }
 }
 
 .footer__container {
   @include flex-box($align: start);
-  height: 350px;
+  min-height: 350px;
+  @include media-laptop {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
   h4 {
     display: inline-block;
     margin: 0;
@@ -23,27 +31,85 @@
         color: 2px solid $color-primary-light;
       }
     }
+    @include media-tablet {
+      @include font(2rem, 2.3rem);
+    }
   }
 }
 
 .footer__column {
   width: 25%;
+  &:nth-of-type(1) {
+    @include media-laptop {
+      width: 50%;
+      padding: 0 34px;
+    }
+    @include media-tablet {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
   &:nth-of-type(2) {
     margin-right: 2%;
+    @include media-laptop {
+      width: 50%;
+      margin-right: 0;
+      padding: 0 18px;
+    }
+    @include media-tablet {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  &:nth-of-type(3) {
+    @include media-laptop {
+      width: 100%;
+    }
+    @include media-tablet {
+      padding-top: 34px;
+    }
+  }
+  @include media-desktop {
+    width: 32%;
+    &:nth-of-type(2) {
+      margin-right: 0;
+      @include media-tablet {
+        margin-top: 30px;
+      }
+    }
   }
 }
 
 .footer__header {
   margin: 37px 0 0;
   color: $color-light-xl;
+  @include media-laptop {
+    margin: 10px 0 0;
+  }
+  @include media-tablet {
+    @include font(2.5rem, 3.25rem);
+    padding: 0 20px;
+    text-align: center;
+  }
 }
 
 .footer__contacts {
-  margin-top: 40px;
+  margin-top: 38px;
+  @include media-tablet {
+    max-width: 300px;
+    margin: 38px auto 0;
+  }
 }
 
 .footer__locations {
-  margin-top: 33px;
+  margin-top: 30px;
+  @include media-laptop {
+    margin-top: 32px;
+  }
+  @include media-tablet {
+    max-width: 300px;
+    margin: 40px auto 0;
+  }
 }
 
 .footer__contact-text {
@@ -76,8 +142,17 @@
   content: "";
   display: block;
   width: 300px;
-  height: 330px;
+  min-height: 330px;
+  margin: auto;
   background-image: url(../assets/img/footer-puppy.png);
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: contain;
+  @include media-laptop {
+    min-height: 368px;
+  }
+  @include media-tablet {
+    min-height: 269px;
+    width: auto;
+  }
 }
