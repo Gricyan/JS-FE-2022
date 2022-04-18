@@ -1,6 +1,5 @@
-const logo = document.querySelector('.logo');
+// const logo = document.querySelector('.logo');
 
 logo.addEventListener('click', () => {
   location.href = "../index.html";
-
 })
