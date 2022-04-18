@@ -5,6 +5,9 @@
     display: inline-block;
     position: fixed;
     top: 41px;
+    right: 50px;
+  }
+  @include media-mobile-small {
     right: 53px;
   }
 }

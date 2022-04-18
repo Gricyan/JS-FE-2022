@@ -548,6 +548,11 @@ h5 {
     display: inline-block;
     position: fixed;
     top: 41px;
+    right: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .burger-container {
     right: 53px;
   }
 }
@@ -979,6 +984,9 @@ h5 {
 }
 .nav__link.nav__link_active::after {
   width: 100%;
+}
+.our-pets .nav__link.nav__link_active {
+  color: #292929;
 }
 
 /* Our pets page */
@@ -1986,12 +1994,7 @@ h5 {
     padding: 30px 30px 25px;
   }
 }
-@media (max-width: 414px) {
-  .header-wrapper {
-    padding: 30px 20px 25px;
-  }
-}
-@media (max-width: 320px) {
+@media (max-width: 767.98px) {
   .header-wrapper {
     padding: 30px 10px 25px;
   }
