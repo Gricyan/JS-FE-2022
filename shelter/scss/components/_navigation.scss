@@ -14,7 +14,8 @@
       transform: translateX(0);
     }
     .our-pets & {
-      background-color: $color-light-s;
+      background-color: $color-light-xl;
+      z-index: 1;
     }
   }
 }

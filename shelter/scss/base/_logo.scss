@@ -5,7 +5,7 @@
     position: fixed;
     top: 30px;
     @include media-tablet {
-      margin-left: calc(100vw - 330px);
+      margin-left: calc(100vw - 320px);
     }
     @include media-mobile-small {
       margin-left: 0;
