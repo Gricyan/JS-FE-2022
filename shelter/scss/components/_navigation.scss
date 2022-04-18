@@ -63,6 +63,12 @@
       width: 100%;
     }
   }
+  .our-pets &.nav__link_active {
+    color: $color-dark-3xl;
+    // &::after {
+    //   width: 100%;
+    // }
+  }
 }
 
 
