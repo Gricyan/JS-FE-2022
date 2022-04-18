@@ -16,7 +16,7 @@
     row-gap: 35px;
   }
   @include media-tablet {
-    row-gap: 10px;
+    row-gap: 16px;
   }
   img {
     width: 100%;
@@ -36,7 +36,7 @@
     padding: 30px 20px 60px;
   }
   @include media-mobile {
-    padding: 16px 10px 40px;
+    padding: 16px 10px 36px;
   }
 }
 
@@ -57,7 +57,7 @@
 
 .about__text {
   max-width: 430px;
-  margin: 25px 0;
+  margin: 24px 0;
   @include media-tablet {
     text-align: justify;
   }

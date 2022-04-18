@@ -8,6 +8,9 @@
   @include media-laptop {
     padding: 20px 30px 0px;
   }
+  @include media-tablet {
+    padding: 20px 10px 0px;
+  }
 }
 
 .footer__container {
@@ -28,6 +31,9 @@
         color: 2px solid $color-primary-light;
       }
     }
+    @include media-tablet {
+      @include font(2rem, 2.3rem);
+    }
   }
 }
 
@@ -38,6 +44,10 @@
       width: 50%;
       padding: 0 35px;
     }
+    @include media-tablet {
+      width: 100%;
+      padding: 0 10px;
+    }
   }
   &:nth-of-type(2) {
     margin-right: 2%;
@@ -46,16 +56,26 @@
       margin-right: 0;
       padding: 0 20px;
     }
+    @include media-tablet {
+      width: 100%;
+      padding: 0;
+    }
   }
   &:nth-of-type(3) {
     @include media-laptop {
       width: 100%;
+    }
+    @include media-tablet {
+      padding-top: 34px;
     }
   }
   @include media-desktop {
     width: 32%;
     &:nth-of-type(2) {
       margin-right: 0;
+      @include media-tablet {
+        margin-top: 30px;
+      }
     }
   }
 }
@@ -65,6 +85,11 @@
   color: $color-light-xl;
   @include media-laptop {
     margin: 10px 0 0;
+  }
+  @include media-tablet {
+    @include font(2.5rem, 3.25rem);
+    padding: 0 20px;
+    text-align: center;
   }
 }
 
@@ -78,6 +103,9 @@
     @include media-laptop {
       margin-top: 28px;
     }
+  }
+  @include media-tablet {
+    margin-top: 40px;
   }
 }
 
@@ -116,7 +144,12 @@
   background-image: url(../assets/img/footer-puppy.png);
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: contain;
   @include media-laptop {
     min-height: 365px;
+  }
+  @include media-tablet {
+    min-height: 269px;
+    width: auto;
   }
 }

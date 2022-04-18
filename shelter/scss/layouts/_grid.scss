@@ -6,6 +6,9 @@
   >* {
     align-self: center;
   }
+  @include media-tablet {
+    padding: 0 14px;
+  }
 }
 
 .grid-locations {
@@ -15,5 +18,8 @@
   grid-gap: 26px 2px;
   >* {
     align-self: center;
+  }
+  @include media-tablet {
+    grid-gap: 32px 2px;
   }
 }

@@ -18,10 +18,20 @@
   
   .slider__arrow_left {
     background-image: url(../assets/icons/slider-icons/arrow-left.svg);
+    @include media-tablet {
+      align-self: flex-end;
+      position: absolute;
+      left: 18%;
+    }
   }
   
   .slider__arrow_right {
     background-image: url(../assets/icons/slider-icons/arrow-right.svg);
+    @include media-tablet {
+      align-self: flex-end;
+      position: absolute;
+      right: 18%;
+    }
   }
   
   .slider__cards {
@@ -30,6 +40,12 @@
     column-gap: 90px;
     @include media-desktop {
       column-gap: 40px;
+    }
+    @include media-tablet {
+      max-width: 270px;
+      justify-content: flex-start;
+      align-self: flex-start;
+      margin: 0px auto;
     }
   }
   
@@ -55,6 +71,11 @@
         display: none;
       }
     }
+    // @include media-tablet {
+    //   .pets__slider &:nth-of-type(2) {
+    //     display: none;
+    //   }
+    // }
   }
   
   .slider__title {

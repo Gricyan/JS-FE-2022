@@ -1,6 +1,9 @@
 .pets {
   min-height: 877px;
   background-color: $color-light-l;
+  @include media-tablet {
+    min-height: auto;
+  }
 }
 
 .pets-wrapper {
@@ -9,7 +12,8 @@
     padding: 45px 30px 40px;
   }
   @include media-tablet {
-    padding: 15px 15px 30px;
+    padding: 15px 15px 1px;
+    overflow-x: hidden;
   }
 }
 
@@ -26,6 +30,11 @@
 .pets__slider {
   @include flex-box();
   margin-top: 59px;
+  @include media-tablet {
+    position: relative;
+    margin-top: 45px;
+    min-height: 504px;
+  }
 }
 
 .pets__button-primary {
@@ -40,6 +49,9 @@
   &:hover {
     border: 2px solid $color-primary-light;
     background-color: $color-primary-light;
+  }
+  @include media-tablet {
+    margin: 43px auto;
   }
 }
 

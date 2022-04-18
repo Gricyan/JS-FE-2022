@@ -9,13 +9,16 @@
     padding: 45px 30px 45px;
   }
   @include media-tablet {
-    padding: 45px 30px 75px;
+    padding: 15px 15px 23px;
   }
 }
 
 .help__header {
   text-align: center;
   color: $color-dark-l;
+  @include media-tablet {
+    @include font(2.5rem, 3.2rem);
+  }
 }
 
 .help__list {
@@ -32,6 +35,11 @@
     justify-content: space-evenly;
     gap: 30px 3%;
   }
+  @include media-mobile {
+    justify-content: space-between;
+    gap: 10px 0%;
+    margin-top: 43px;
+  }
 }
 
 .help__list-item {
@@ -39,6 +47,9 @@
   flex-direction: column;
   @include media-desktop {
     width: 170px;
+  }
+  @include media-mobile {
+    width: 130px;
   }
 }
 
@@ -49,6 +60,11 @@
   background-position: center;
   background-repeat: no-repeat;
   @extend %transition;
+  @include media-tablet {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+  }
 }
 
 .help__list-item:nth-child(1) {
@@ -108,4 +124,7 @@
 .list-item__name {
   color: $color-dark-l;
   text-align: center;
+  @include media-tablet {
+    @include font(1.5rem, 1.65rem);
+  }
 }
