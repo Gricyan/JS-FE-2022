@@ -41,5 +41,9 @@
   @include wrapper($top: 30, $side: 40, $bottom: 30);
   @include media-laptop {
     padding: 30px 30px 30px;
+    z-index: 1;
+  }
+  @include media-tablet {
+    padding: 30px 10px 30px;
   }
 }

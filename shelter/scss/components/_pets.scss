@@ -15,6 +15,9 @@
     @include media-laptop {
       padding: 45px 30px 45px;
     }
+    @include media-tablet {
+      padding: 45px 10px 10px;
+    }
   }
   @include media-tablet {
     padding: 15px 15px 1px;
@@ -68,6 +71,9 @@
     min-height: 1342px;
     margin-top: 120px;
     background-color: $color-light-l;
+    @include media-laptop {
+      margin-top: 92px;
+    }
   }
   .pets__header {
     @include media-laptop {
@@ -85,6 +91,9 @@
     column-gap: 40px;
     margin-top: 0;
   }
+  @include media-tablet {
+    margin-top: 43px;
+  }
 }
 
 .hidden-for-laptop {
@@ -95,6 +104,12 @@
 
 @media (max-width: 1159.98px) {
   .hidden-for-laptop {
+    display: none;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .hidden-for-tablet {
     display: none;
   }
 }

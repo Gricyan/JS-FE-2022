@@ -3,7 +3,6 @@ const upBtn = document.querySelector('.up-btn');
 
 logo.addEventListener('click', () => {
   location.href = "index.html";
-
 })
 
 window.addEventListener('scroll', function() {
