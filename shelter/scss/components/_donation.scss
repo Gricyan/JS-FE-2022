@@ -1,5 +1,5 @@
 .donation {
-  min-height: 461px;
+  min-height: 462px;
   background-color: $color-light-l;
 }
 
@@ -110,6 +110,8 @@
   @include font ($size: 1.2rem, $height: 1.8rem, $style: italic, $spacing: 0);
   color: $color-dark-m;
   @include media-tablet {
+    max-width: 300px;
+    margin: 20px auto 35px;
     text-align: justify;
     padding: 0 10px;
   }

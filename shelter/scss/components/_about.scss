@@ -30,7 +30,7 @@
 .about-wrapper {
   @include wrapper();
   @include media-laptop {
-    padding: 45px 30px 95px;
+    padding: 45px 30px 92px;
   }
   @include media-tablet {
     padding: 30px 20px 60px;
@@ -42,7 +42,9 @@
 
 .about__content {
   color: $color-dark-l;
-  padding: 0 15px;
+  @include media-tablet {
+    padding: 0 15px;
+  }
 }
 
 .about__header {
@@ -57,7 +59,7 @@
 
 .about__text {
   max-width: 430px;
-  margin: 24px 0;
+  margin: 25px 0;
   @include media-tablet {
     text-align: justify;
   }

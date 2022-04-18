@@ -7,9 +7,14 @@
 }
 
 .pets-wrapper {
-  @include wrapper($top: 45, $side: 40, $bottom: 45);
+  @include wrapper($top: 45, $side: 40, $bottom: 40);
   @include media-laptop {
     padding: 45px 30px 40px;
+  }
+  .our-pets & {
+    @include media-laptop {
+      padding: 45px 30px 45px;
+    }
   }
   @include media-tablet {
     padding: 15px 15px 1px;
@@ -32,8 +37,8 @@
   margin-top: 59px;
   @include media-tablet {
     position: relative;
-    margin-top: 45px;
-    min-height: 504px;
+    margin-top: 40px;
+    min-height: 507px;
   }
 }
 

@@ -9,6 +9,7 @@
   @include flex-box();
   @include media-tablet {
     width: 100%;
+    min-height: 60px;
     z-index: 2;
   }
 }

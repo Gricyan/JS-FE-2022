@@ -6,7 +6,7 @@
 .help-wrapper {
   @include wrapper($top: 45, $side: 40, $bottom: 45);
   @include media-laptop {
-    padding: 45px 30px 45px;
+    padding: 45px 30px 75px;
   }
   @include media-tablet {
     padding: 15px 15px 23px;
@@ -29,16 +29,22 @@
     gap: 30px 15%;
   }
   @include media-laptop {
-    gap: 30px 10%;
+    gap: 30px 8.5%;
   }
   @include media-tablet {
+    max-width: 400px;
+    margin: 60px auto 0;
     justify-content: space-evenly;
-    gap: 30px 3%;
+    gap: 30px 0;
   }
   @include media-mobile {
+    max-width: 300px;
+    gap: 30px 3%;
+    margin-top: 40px;
+  }
+  @include media-mobile-middle {
     justify-content: space-between;
-    gap: 10px 0%;
-    margin-top: 43px;
+    gap: 6px 0;
   }
 }
 
@@ -124,7 +130,9 @@
 .list-item__name {
   color: $color-dark-l;
   text-align: center;
+  margin-top: 28px;
   @include media-tablet {
+    margin-top: 24px;
     @include font(1.5rem, 1.65rem);
   }
 }

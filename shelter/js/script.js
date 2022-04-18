@@ -31,7 +31,7 @@ const navWrapper = document.querySelector('.nav-wrapper')
 function toggleMenu() {
   logo.classList.toggle('nav__link_active')
   hamburger.classList.toggle('nav__link_active')
-  nav.classList.toggle('nav__link_active')
+  nav.classList.toggle('nav__active')
   navWrapper.classList.toggle('nav__link_active')
 }
 
@@ -43,7 +43,7 @@ function closeMenu(event) {
   if (event.target.classList.contains('nav__link')) {
     logo.classList.remove('nav__link_active')
     hamburger.classList.remove('nav__link_active')
-    nav.classList.remove('nav__link_active')
+    nav.classList.remove('nav__active')
     navWrapper.classList.remove('nav__link_active')
   }
 }

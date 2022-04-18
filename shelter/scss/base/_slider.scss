@@ -71,11 +71,11 @@
         display: none;
       }
     }
-    // @include media-tablet {
-    //   .pets__slider &:nth-of-type(2) {
-    //     display: none;
-    //   }
-    // }
+    @include media-tablet {
+      .pets__slider &:nth-of-type(2) {
+        display: none;
+      }
+    }
   }
   
   .slider__title {
