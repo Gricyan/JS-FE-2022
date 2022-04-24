@@ -539,6 +539,10 @@ h5 {
   text-align: center;
 }
 
+.no-scroll {
+  overflow-y: hidden;
+}
+
 .burger-container {
   width: 10%;
   display: none;
