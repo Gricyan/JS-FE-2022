@@ -1,4 +1,4 @@
-const petsData = [{
+[{
     "name": "Katrine",
     "img": "../assets/img/slider-images/pets-katrine.png",
     "type": "Cat",
@@ -87,52 +87,3 @@ const petsData = [{
     "parasites": ["lice", "fleas"]
   }
 ]
-
-// PETS GALLERY
-
-console.log(petsData);
-
-petsData.forEach((pet) => {
-  const sliderCards = document.querySelector('.slider__cards')
-  const divSliderCard = document.createElement("div");
-  divSliderCard.classList.add("slider__card");
-  divSliderCard.innerHTML = `
-  <img src="${pet.img}" alt="${pet.name}">
-  <div class="slider__title">${pet.name}</div>
-  <a href="#" class="button slider__button">Learn more</a>`
-  sliderCards.append(divSliderCard);
-})
-
-
-// FOR SERVER REQUEST
-/*
-const request = new XMLHttpRequest();
-request.open('GET', 'js/pets.json', true);
-
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    // Success!
-    var data = JSON.parse(request.responseText);
-    console.log(data);
-
-    data.forEach((pet) => {
-      const sliderCards = document.querySelector('.slider__cards')
-      const divSliderCard = document.createElement("div");
-      divSliderCard.classList.add("slider__card");
-      divSliderCard.innerHTML = `
-      <img src="${pet.img}" alt="${pet.name}">
-      <div class="slider__title">${pet.name}</div>
-      <a href="#" class="button slider__button">Learn more</a>`
-      sliderCards.append(divSliderCard);
-    })
-  } else {
-    // We reached our target server, but it returned an error
-  }
-};
-
-request.onerror = function() {
-  // There was a connection error of some sort
-};
-
-request.send();
-*/

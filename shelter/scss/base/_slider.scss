@@ -38,6 +38,7 @@
     max-width: 990px;
     @include flex-box();
     column-gap: 90px;
+    overflow-x: hidden;
     @include media-desktop {
       column-gap: 40px;
     }

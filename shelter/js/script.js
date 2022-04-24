@@ -50,7 +50,3 @@ function closeMenu(event) {
     navWrapper.classList.remove('nav__link_active')
   }
 }
-
-window.scroll(function(e) {
-  e.preventDefault()
-})
