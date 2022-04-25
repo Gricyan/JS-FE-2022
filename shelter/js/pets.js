@@ -85,22 +85,47 @@ const petsData = [{
     "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
     "diseases": ["deafness", "blindness"],
     "parasites": ["lice", "fleas"]
+  },
+  {
+    "name": "Katrine",
+    "img": "../assets/img/slider-images/pets-katrine.png",
+    "type": "Cat",
+    "breed": "British Shorthair",
+    "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
+    "age": "6 months",
+    "inoculations": ["panleukopenia"],
+    "diseases": ["none"],
+    "parasites": ["none"]
   }
 ]
 
 // PETS GALLERY
 
-console.log(petsData);
-
-petsData.forEach((pet) => {
-  const sliderCards = document.querySelector('.slider__cards')
-  const divSliderCard = document.createElement("div");
-  divSliderCard.classList.add("slider__card");
-  divSliderCard.innerHTML = `
+const createCardTemplate = () => {
+  petsData.forEach((pet) => {
+    const CAROUSEL = document.querySelector('.carousel')
+    const divSliderCard = document.createElement("div");
+    divSliderCard.classList.add("slider__card");
+    divSliderCard.innerHTML = `
   <img src="${pet.img}" alt="${pet.name}">
   <div class="slider__title">${pet.name}</div>
   <a href="#" class="button slider__button">Learn more</a>`
-  sliderCards.append(divSliderCard);
+    CAROUSEL.append(divSliderCard);
+  })
+}
+
+createCardTemplate()
+
+let sliderCards = document.querySelectorAll('.slider__card')
+
+sliderCards.forEach((sliderCard, index) => {
+  if (index < 3) {
+    sliderCard.classList.add("item-left");
+  } else if (index >= 3 && index < 6) {
+    sliderCard.classList.add("item-active");
+  } else if (index >= 6 && index < 9) {
+    sliderCard.classList.add("item-right");
+  }
 })
 
 
