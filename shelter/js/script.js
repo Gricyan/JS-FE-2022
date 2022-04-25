@@ -22,12 +22,14 @@ function toTopScroll() {
 
 /* Burger menu */
 
+const body = document.querySelector('body')
 const hamburger = document.querySelector('.burger')
 const nav = document.querySelector('.navigation')
 const navLinks = document.querySelectorAll('.nav__link')
 const navWrapper = document.querySelector('.nav-wrapper')
 
 function toggleMenu() {
+  body.classList.toggle('no-scroll')
   logo.classList.toggle('nav__link_active')
   hamburger.classList.toggle('nav__link_active')
   nav.classList.toggle('nav__active')
@@ -37,9 +39,11 @@ function toggleMenu() {
 hamburger.addEventListener('click', toggleMenu)
 nav.addEventListener('click', closeMenu)
 navLinks.forEach((el) => el.addEventListener('click', closeMenu))
+navWrapper.addEventListener('mouseup', toggleMenu)
 
 function closeMenu(event) {
   if (event.target.classList.contains('nav__link')) {
+    body.classList.remove('no-scroll')
     logo.classList.remove('nav__link_active')
     hamburger.classList.remove('nav__link_active')
     nav.classList.remove('nav__active')

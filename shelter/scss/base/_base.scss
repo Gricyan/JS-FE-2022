@@ -32,6 +32,10 @@ h5 {
   @include font(1.5rem, 1.65rem);
 }
 
+a {
+  text-decoration: none;
+}
+
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);

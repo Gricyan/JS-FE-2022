@@ -1,96 +1,146 @@
-  .rounded-btn {
-    content: "";
-    @include flex-box($flex: inline-flex, $justify: center);
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    border: 2px solid $color-primary;
-    background-position: center;
-    background-repeat: no-repeat;
-    &.rounded-btn_active {
-      &:hover {
-        cursor: pointer;
-        border: 2px solid $color-primary-light;
-        background-color: $color-primary-light;
-      }
-    }
-  }
-  
-  .slider__arrow_left {
-    background-image: url(../assets/icons/slider-icons/arrow-left.svg);
-    @include media-tablet {
-      align-self: flex-end;
-      position: absolute;
-      left: 18%;
-    }
-  }
-  
-  .slider__arrow_right {
-    background-image: url(../assets/icons/slider-icons/arrow-right.svg);
-    @include media-tablet {
-      align-self: flex-end;
-      position: absolute;
-      right: 18%;
-    }
-  }
-  
-  .slider__cards {
-    max-width: 990px;
-    @include flex-box();
-    column-gap: 90px;
-    @include media-desktop {
-      column-gap: 40px;
-    }
-    @include media-tablet {
-      max-width: 270px;
-      justify-content: flex-start;
-      align-self: flex-start;
-      margin: 0px auto;
-    }
-  }
-  
-  .slider__card {
-    @include flex-box();
-    flex-direction: column;
-    width: 270px;
-    height: 435px;
-    background-color: $color-light-s;
-    border-radius: 9px;
-    @extend %transition;
-    cursor: pointer;
+.rounded-btn {
+  content: "";
+  @include flex-box($flex: inline-flex, $justify: center);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.rounded-btn_active {
     &:hover {
-      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-      background-color: $color-light-xl;
-      .slider__button {
-        border: 2px solid $color-primary-light;
-        background-color: $color-primary-light;
-      }
-    }
-    @include media-desktop {
-      .pets__slider &:last-child {
-        display: none;
-      }
-    }
-    @include media-tablet {
-      .pets__slider &:nth-of-type(2) {
-        display: none;
-      }
+      cursor: pointer;
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
     }
   }
-  
-  .slider__title {
-    @extend %font-additional;
-    @include font(2rem, 2.27rem, $weight: 400);
-    color: $color-dark-l;
+}
+
+.slider__arrow_left {
+  background-image: url(../assets/icons/slider-icons/arrow-left.svg);
+  @include media-tablet {
+    align-self: flex-end;
+    position: absolute;
+    left: 18%;
   }
-  
-  .slider__button {
-    width: 187px;
-    margin-bottom: 30px;
-    padding: 13px;
-    @extend %font-additional;
-    @include font(1.7rem, 2.2rem, $weight: 400);
-    color: $color-dark-3xl;
-    @extend %transition;
-    cursor: pointer;
+}
+
+.slider__arrow_right {
+  background-image: url(../assets/icons/slider-icons/arrow-right.svg);
+  @include media-tablet {
+    align-self: flex-end;
+    position: absolute;
+    right: 18%;
   }
+}
+
+.slider__wrapper {
+  max-width: 1060px;
+  padding: 25px 35px;
+  overflow-x: hidden;
+  @include media-desktop {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  @include media-laptop {
+    max-width: 580px;
+  }
+  @include media-tablet {
+    max-width: 340px;
+    margin-bottom: 35px;
+    padding: 25px 35px 0;
+  }
+  @include media-mobile {
+    max-width: 340px;
+    padding: 0;
+  }
+  @include media-mobile-small {
+    max-width: 270px;
+  }
+}
+
+.carousel {
+  @include flex-box();
+  column-gap: 90px;
+  position: relative;
+  left: -1080px;
+  @include media-desktop {
+    column-gap: 60px;
+  }
+  @include media-laptop {
+    left: -965px;
+    column-gap: 40px;
+  }
+  @include media-tablet {
+    left: -965px;
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+}
+
+.slider__card {
+  @include flex-box();
+  flex-direction: column;
+  width: 270px;
+  height: 435px;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  @extend %transition;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    background-color: $color-light-xl;
+    .slider__button {
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+    }
+  }
+}
+
+.slider__title {
+  @extend %font-additional;
+  @include font(2rem, 2.27rem, $weight: 400);
+  color: $color-dark-l;
+}
+
+.slider__button {
+  width: 187px;
+  margin-bottom: 30px;
+  padding: 13px;
+  @extend %font-additional;
+  @include font(1.7rem, 2.2rem, $weight: 400);
+  color: $color-dark-3xl;
+  @extend %transition;
+  cursor: pointer;
+}
+
+
+/* SLIDER ANIMATION */
+
+@keyframes move-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: -2160px;
+  }
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 3s;
+}
+
+@keyframes move-left {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 3s;
+}
