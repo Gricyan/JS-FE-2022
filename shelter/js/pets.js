@@ -118,15 +118,38 @@ createCardTemplate()
 
 let sliderCards = document.querySelectorAll('.slider__card')
 
-sliderCards.forEach((sliderCard, index) => {
-  if (index < 3) {
-    sliderCard.classList.add("item-left");
-  } else if (index >= 3 && index < 6) {
-    sliderCard.classList.add("item-active");
-  } else if (index >= 6 && index < 9) {
-    sliderCard.classList.add("item-right");
+window.addEventListener('resize', addClass)
+
+function addClass() {
+  if (screen.width > 768) {
+    sliderCards.forEach((sliderCard, index) => {
+      if (index < 3) {
+        sliderCard.classList.add("item-left");
+      } else if (index >= 3 && index < 6) {
+        sliderCard.classList.add("item-active");
+      } else if (index >= 6 && index < 9) {
+        sliderCard.classList.add("item-right");
+      }
+    })
+  } else if (screen.width <= 768) {
+    sliderCards.forEach((sliderCard, index) => {
+      if (index < 2) {
+        sliderCard.classList.add("item-left");
+      } else if (index >= 2 && index < 4) {
+        sliderCard.classList.add("item-active");
+      } else if (index >= 4 && index < 6) {
+        sliderCard.classList.add("item-right");
+      }
+    })
   }
-})
+}
+
+addClass()
+
+
+
+
+
 
 
 // FOR SERVER REQUEST

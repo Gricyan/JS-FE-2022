@@ -68,9 +68,11 @@
     column-gap: 60px;
   }
   @include media-laptop {
+    left: -965px;
     column-gap: 40px;
   }
   @include media-tablet {
+    left: -965px;
     justify-content: flex-start;
     align-self: flex-start;
   }
@@ -126,7 +128,7 @@
 
 .transition-right {
   animation-name: move-right;
-  animation-duration: 5s;
+  animation-duration: 3s;
 }
 
 @keyframes move-left {
@@ -140,5 +142,5 @@
 
 .transition-left {
   animation-name: move-left;
-  animation-duration: 5s;
+  animation-duration: 3s;
 }
