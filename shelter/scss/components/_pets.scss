@@ -28,6 +28,7 @@
 .pets__header {
   text-align: center;
   color: $color-dark-l;
+  margin-bottom: 25px;
   @include media-tablet {
     width: 100%;
     @include font(2.5rem, 3.2rem);
@@ -53,7 +54,7 @@
 .pets__button-primary {
   display: block;
   width: 261px;
-  margin: 35px auto;
+  margin: 25px auto;
   padding: 13px;
   background-color: $color-primary;
   color: $color-dark-3xl;
