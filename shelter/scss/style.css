@@ -734,8 +734,10 @@ a {
 }
 
 .slider__wrapper {
-  max-width: 1060px;
-  padding: 25px 35px;
+  position: relative;
+  width: 1060px;
+  height: 505px;
+  margin: 0 auto;
   overflow-x: hidden;
 }
 @media (max-width: 1279.98px) {
@@ -753,7 +755,6 @@ a {
   .slider__wrapper {
     max-width: 340px;
     margin-bottom: 35px;
-    padding: 25px 35px 0;
   }
 }
 @media (max-width: 414px) {
@@ -768,31 +769,38 @@ a {
   }
 }
 
-.carousel {
+.carousel-container {
+  position: absolute;
+  height: 505px;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
   column-gap: 90px;
-  position: relative;
-  left: -1080px;
+  padding-left: 35px;
 }
 @media (max-width: 1279.98px) {
-  .carousel {
+  .carousel-container {
     column-gap: 60px;
+    padding-left: 25px;
   }
 }
 @media (max-width: 960px) {
-  .carousel {
-    left: -965px;
+  .carousel-container {
     column-gap: 40px;
+    padding-left: 0;
   }
 }
 @media (max-width: 767.98px) {
-  .carousel {
-    left: -965px;
-    justify-content: flex-start;
-    align-self: flex-start;
+  .carousel-container {
+    padding-left: 35px;
+  }
+}
+@media (max-width: 414px) {
+  .carousel-container {
+    padding-left: calc((100% - 270px) / 2);
   }
 }
 
@@ -842,28 +850,80 @@ a {
 /* SLIDER ANIMATION */
 @keyframes move-right {
   from {
-    left: -1080px;
-  }
-  to {
-    left: -2160px;
-  }
-}
-.transition-right {
-  animation-name: move-right;
-  animation-duration: 3s;
-}
-
-@keyframes move-left {
-  from {
-    left: -1080px;
+    left: -360px;
   }
   to {
     left: 0px;
   }
 }
+@keyframes move-right-desktop {
+  from {
+    left: -330px;
+  }
+  to {
+    left: 0px;
+  }
+}
+@keyframes move-right-laptop {
+  from {
+    left: -320px;
+  }
+  to {
+    left: 0px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s;
+}
+@media (max-width: 1279.98px) {
+  .transition-right {
+    animation-name: move-right-desktop;
+  }
+}
+@media (max-width: 1279.98px) {
+  .transition-right {
+    animation-name: move-right-laptop;
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -360px;
+  }
+}
+@keyframes move-left-desktop {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -330px;
+  }
+}
+@keyframes move-left-laptop {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -310px;
+  }
+}
 .transition-left {
   animation-name: move-left;
-  animation-duration: 3s;
+  animation-duration: 1s;
+}
+@media (max-width: 1279.98px) {
+  .transition-left {
+    animation-name: move-left-desktop;
+  }
+}
+@media (max-width: 1279.98px) {
+  .transition-left {
+    animation-name: move-left-laptop;
+  }
 }
 
 .gallery-paginator__container {
@@ -1348,6 +1408,7 @@ a {
 .pets__header {
   text-align: center;
   color: #545454;
+  margin-bottom: 25px;
 }
 @media (max-width: 767.98px) {
   .pets__header {
@@ -1388,7 +1449,7 @@ a {
 .pets__button-primary {
   display: block;
   width: 261px;
-  margin: 35px auto;
+  margin: 25px auto;
   padding: 13px;
   background-color: #f1cdb3;
   color: #292929;

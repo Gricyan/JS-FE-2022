@@ -50,3 +50,5 @@ function closeMenu(event) {
     navWrapper.classList.remove('nav__link_active')
   }
 }
+
+alert('Привет. К сожалению, я еще не закончил работу. Если можно, проверьте в четверг, пожалуйста. Спасибо!')

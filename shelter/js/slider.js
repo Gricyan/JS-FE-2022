@@ -1,47 +1,76 @@
-/* SLIDER */
+const CAROUSEL = document.querySelector('.carousel-container');
+const BTN_LEFT = document.querySelector('.slider__arrow_left')
+const BTN_RIGHT = document.querySelector('.slider__arrow_right')
 
-const BTN_LEFT = document.querySelector(".slider__arrow_left");
-const BTN_RIGHT = document.querySelector(".slider__arrow_right");
-const CAROUSEL = document.querySelector(".carousel");
-const ITEM_ACTIVE = document.getElementsByClassName("item-active");
-const ITEM_LEFT = document.getElementsByClassName("item-left");
-const ITEM_RIGHT = document.getElementsByClassName("item-right");
+let idx = 0
 
-const moveLeft = () => {
-  CAROUSEL.classList.add("transition-left");
-  BTN_LEFT.removeEventListener("click", moveLeft);
-  BTN_RIGHT.removeEventListener("click", moveRight);
-};
+// PETS GALLERY
 
-const moveRight = () => {
-  CAROUSEL.classList.add("transition-right");
-  BTN_LEFT.removeEventListener("click", moveLeft);
-  BTN_RIGHT.removeEventListener("click", moveRight);
-};
+const createCardTemplate = (dir) => {
+  let direction = dir
 
-BTN_LEFT.addEventListener("click", moveLeft);
-BTN_RIGHT.addEventListener("click", moveRight);
+  // CREATE CARD TEMPLATE
+  const divSliderCard = document.createElement("div");
+  divSliderCard.classList.add("slider__card");
+  divSliderCard.innerHTML = `
+  <img src="${pets[idx].img}" alt="${pets[idx].name}">
+  <div class="slider__title">${pets[idx].name}</div>
+  <a href="#" class="button slider__button">Learn more</a>`
 
-CAROUSEL.addEventListener("animationend", (animationEvent) => {
-  let changedItem;
-  if (animationEvent.animationName === "move-left") {
-    CAROUSEL.classList.remove("transition-left");
-    changedItem = ITEM_RIGHT;
-    for (let i = 0; i < ITEM_ACTIVE.length; i++) {
-      ITEM_RIGHT[i].innerHTML = ITEM_ACTIVE[i].innerHTML
-      ITEM_ACTIVE[i].innerHTML = ITEM_LEFT[i].innerHTML
-      ITEM_LEFT[i].innerHTML = changedItem[i].innerHTML
-    }
+  // INSERT NEW CARD TO CAROUSEL
+  if (direction == 'left') {
+    CAROUSEL.append(divSliderCard)
   } else {
-    CAROUSEL.classList.remove("transition-right");
-    changedItem = ITEM_LEFT;
-    for (let i = 0; i < ITEM_ACTIVE.length; i++) {
-      ITEM_LEFT[i].innerHTML = ITEM_ACTIVE[i].innerHTML
-      ITEM_ACTIVE[i].innerHTML = ITEM_RIGHT[i].innerHTML
-      ITEM_RIGHT[i].innerHTML = changedItem[i].innerHTML
-    }
+    CAROUSEL.prepend(divSliderCard)
   }
 
-  BTN_LEFT.addEventListener("click", moveLeft);
-  BTN_RIGHT.addEventListener("click", moveRight);
-})
+  // ITERATE NEW CARD
+  if (idx + 1 == pets.length) {
+    idx = 0;
+  } else if (idx < 0) {
+    idx++;
+  } else {
+    idx++;
+  }
+}
+
+function left() {
+  let currentSlides = document.querySelectorAll('.slider__card');
+  BTN_RIGHT.removeEventListener('click', left)
+  BTN_LEFT.removeEventListener('click', right)
+  CAROUSEL.classList.add('transition-left')
+
+  createCardTemplate('left');
+  setTimeout(() => {
+    currentSlides[0].remove();
+    CAROUSEL.classList.remove('transition-left')
+    BTN_RIGHT.addEventListener('click', left)
+    BTN_LEFT.addEventListener('click', right)
+  }, 990)
+}
+
+function right() {
+  let currentSlides = document.querySelectorAll('.slider__card');
+  BTN_LEFT.removeEventListener('click', right)
+  BTN_RIGHT.removeEventListener('click', left)
+  CAROUSEL.classList.add('transition-right')
+
+  createCardTemplate('right');
+  setTimeout(() => {
+    currentSlides[currentSlides.length - 1].remove();
+    CAROUSEL.classList.remove('transition-right')
+    BTN_LEFT.addEventListener('click', right)
+    BTN_RIGHT.addEventListener('click', left)
+  }, 990)
+}
+
+const createInitTemplate = () => {
+  for (let i = 0; i < 3; i++) {
+    createCardTemplate()
+  }
+}
+
+createInitTemplate()
+
+BTN_RIGHT.addEventListener('click', left)
+BTN_LEFT.addEventListener('click', right)
