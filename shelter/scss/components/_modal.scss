@@ -20,6 +20,9 @@
   .modal-active & {
     display: block;
   }
+  &:hover .btn-close {
+    background-color: $color-primary-light;
+  }
 }
 
 .modal__container {
@@ -45,6 +48,9 @@
   @include media-tablet {
     width: 240px;
     min-height: 341px;
+  }
+  &:hover .btn-close {
+    background-color: transparent;
   }
 }
 
@@ -141,7 +147,7 @@
   @extend %transition;
   cursor: pointer;
   &:hover {
-    background-color: $color-primary-light;
+    background-color: $color-primary-light !important;
   }
   @include media-tablet {
     right: -30px;

@@ -2077,6 +2077,9 @@ a {
 .modal-active .modal__wrapper {
   display: block;
 }
+.modal__wrapper:hover .btn-close {
+  background-color: #fddcc4;
+}
 
 .modal__container {
   position: relative;
@@ -2104,6 +2107,9 @@ a {
     width: 240px;
     min-height: 341px;
   }
+}
+.modal__container:hover .btn-close {
+  background-color: transparent;
 }
 
 .modal__container-content {
@@ -2230,7 +2236,7 @@ a {
   cursor: pointer;
 }
 .btn-close:hover {
-  background-color: #fddcc4;
+  background-color: #fddcc4 !important;
 }
 @media (max-width: 767.98px) {
   .btn-close {

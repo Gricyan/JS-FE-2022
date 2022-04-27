@@ -57,3 +57,8 @@ const modalWrapper = document.querySelector('.modal__wrapper')
 modalWrapper.addEventListener('click', () => {
   closeModalWindow()
 })
+
+modalContainerContent.addEventListener('click', (event) => {
+  event.stopPropagation();
+  console.log(event.target)
+})
