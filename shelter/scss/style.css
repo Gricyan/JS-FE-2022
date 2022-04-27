@@ -2076,10 +2076,6 @@ a {
 
 .modal__container {
   position: relative;
-  display: flex;
-  justify-content: stretch;
-  flex-wrap: nowrap;
-  align-items: center;
   width: 900px;
   height: 500px;
   margin: auto;
@@ -2093,11 +2089,20 @@ a {
 .modal-active .modal__container {
   top: 50%;
 }
+@media (max-width: 960px) {
+  .modal__container {
+    width: 630px;
+    height: 350px;
+  }
+}
 
-.modal__content {
-  display: block;
-  width: 500px;
+.modal__container-content {
+  position: relative;
   height: 500px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: start;
 }
 
 .modal__img {
@@ -2108,11 +2113,16 @@ a {
   width: 100%;
   border-radius: 9px 0px 0px 9px;
 }
+@media (max-width: 960px) {
+  .modal__img {
+    width: 350px;
+    height: 350px;
+  }
+}
 
 .modal__content {
   max-width: 351px;
-  margin: 20px 20px 20px 29px;
-  padding-top: 15px;
+  margin: 14px 20px 20px 29px;
 }
 
 .modal__pet-name {

@@ -1,5 +1,5 @@
 const pets = [{
-    "id": "1",
+    "id": "0",
     "name": "Katrine",
     "img": "assets/img/slider-images/pets-katrine.png",
     "type": "Cat",
@@ -11,7 +11,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "2",
+    "id": "1",
     "name": "Jennifer",
     "img": "assets/img/slider-images/pets-jennifer.png",
     "type": "Dog",
@@ -23,7 +23,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "3",
+    "id": "2",
     "name": "Woody",
     "img": "assets/img/slider-images/pets-woody.png",
     "type": "Dog",
@@ -35,7 +35,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "4",
+    "id": "3",
     "name": "Sophia",
     "img": "assets/img/slider-images/pets-sophia.png",
     "type": "Dog",
@@ -47,7 +47,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "5",
+    "id": "4",
     "name": "Scarlett",
     "img": "assets/img/slider-images/pets-scarlet.png",
     "type": "Dog",
@@ -59,7 +59,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "6",
+    "id": "5",
     "name": "Timmy",
     "img": "assets/img/slider-images/pets-timmy.png",
     "type": "Cat",
@@ -71,7 +71,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "7",
+    "id": "6",
     "name": "Freddie",
     "img": "assets/img/slider-images/pets-freddie.png",
     "type": "Cat",
@@ -83,7 +83,7 @@ const pets = [{
     "parasites": ["none"]
   },
   {
-    "id": "8",
+    "id": "7",
     "name": "Charly",
     "img": "assets/img/slider-images/pets-charly.png",
     "type": "Dog",
