@@ -12,10 +12,11 @@ const createCardTemplate = (dir) => {
   // CREATE CARD TEMPLATE
   const divSliderCard = document.createElement("div");
   divSliderCard.classList.add("slider__card");
+  divSliderCard.setAttribute('data-id', pets[idx].id);
   divSliderCard.innerHTML = `
   <img src="${pets[idx].img}" alt="${pets[idx].name}">
   <div class="slider__title">${pets[idx].name}</div>
-  <a href="#" class="button slider__button">Learn more</a>`
+  <a href="#" class="button slider__button button_disabled">Learn more</a>`
 
   // INSERT NEW CARD TO CAROUSEL
   if (direction == 'left') {

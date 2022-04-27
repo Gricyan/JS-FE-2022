@@ -1,0 +1,108 @@
+.modal {
+  //display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: -100%;
+  &.modal-active {
+    top: 0;
+  }
+}
+
+.modal__wrapper {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(41, 41, 41, 0.6);
+  @extend %transition;
+  .modal-active & {
+    display: block;
+  }
+}
+
+.modal__container {
+  position: relative;
+  @include flex-box($justify: stretch);
+  width: 900px;
+  height: 500px;
+  margin: auto;
+  top: -100%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 9px;
+  background-color: $color-light-s;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  @extend %transition;
+  .modal-active & {
+    top: 50%;
+    @extend %transition;
+  }
+}
+
+.modal__content {
+  display: block;
+  width: 500px;
+  height: 500px;
+}
+
+.modal__img {
+  width: 500px;
+  height: 500px;
+  & img {
+    width: 100%;
+    border-radius: 9px 0px 0px 9px;
+  }
+}
+
+.modal__content {
+  max-width: 351px;
+  margin: 20px 20px 20px 29px;
+  padding-top: 15px;
+}
+
+.modal__pet-name {
+  margin: 35px 0 0px;
+}
+
+.modal__pet-type {
+  margin: 9px 0 0;
+}
+
+.modal__pet-description {
+  margin: 41px 0 37px;
+}
+
+.modal__pet-info {
+  padding-left: 15px;
+  & h5 {
+    margin: 8px 0;
+  }
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+.btn-close {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  background-image: url(../../assets/icons/modal-icons/close-btn.svg);
+  @extend %transition;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.modal-no-scroll {
+  overflow: hidden;
+  // padding-right: 17px;
+  // width: calc(100vw + 17px);
+  margin-left: -17px;
+  @include media-tablet {
+    margin-left: 0;
+  }
+}
