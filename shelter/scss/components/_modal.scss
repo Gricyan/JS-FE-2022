@@ -25,7 +25,7 @@
 .modal__container {
   position: relative;
   width: 900px;
-  height: 500px;
+  min-height: 500px;
   margin: auto;
   top: -100%;
   -ms-transform: translateY(-50%);
@@ -40,19 +40,34 @@
   }
   @include media-laptop {
     width: 630px;
-    height: 350px;
+    min-height: 350px;
+  }
+  @include media-tablet {
+    width: 240px;
+    min-height: 341px;
   }
 }
 
 .modal__container-content {
   position: relative;
-  height: 500px;
+  max-height: 500px;
   @include flex-box($align: start);
+  @include media-laptop {
+    width: 630px;
+    min-height: 350px;
+  }
+  @include media-tablet {
+    width: 630px;
+    min-height: 341px;
+  }
 }
 
 .modal__img {
   width: 500px;
   height: 500px;
+  @include media-tablet {
+    display: none;
+  }
   & img {
     width: 100%;
     border-radius: 9px 0px 0px 9px;
@@ -66,24 +81,51 @@
 .modal__content {
   max-width: 351px;
   margin: 14px 20px 20px 29px;
+  @include media-laptop {
+    max-width: 260px;
+    margin: 10px 9px 10px 10px;
+  }
+  @include media-tablet {
+    max-width: 220px;
+    margin: 10px;
+  }
 }
 
 .modal__pet-name {
   margin: 35px 0 0px;
+  @include media-laptop {
+    margin: 1px 0 0px;
+  }
+  @include media-tablet {
+    text-align: center;
+  }
 }
 
 .modal__pet-type {
   margin: 9px 0 0;
+  @include media-tablet {
+    text-align: center;
+  }
 }
 
 .modal__pet-description {
   margin: 41px 0 37px;
+  @include media-laptop {
+    @include font(1.3rem, 1.43rem);
+    margin: 20px 0 0;
+  }
 }
 
 .modal__pet-info {
   padding-left: 15px;
   & h5 {
     margin: 8px 0;
+    @include media-laptop {
+      margin: 3px 0;
+    }
+  }
+  @include media-tablet {
+    margin-bottom: 0;
   }
 }
 
@@ -95,20 +137,21 @@
   position: absolute;
   top: -52px;
   right: -42px;
-  background-image: url(../../assets/icons/modal-icons/close-btn.svg);
+  background-image: url(../assets/icons/modal-icons/close-btn.svg);
   @extend %transition;
   cursor: pointer;
   &:hover {
     background-color: $color-primary-light;
   }
+  @include media-tablet {
+    right: -30px;
+  }
 }
 
 .modal-no-scroll {
   overflow: hidden;
-  // padding-right: 17px;
-  // width: calc(100vw + 17px);
   margin-left: -17px;
-  @include media-tablet {
+  @include media-laptop {
     margin-left: 0;
   }
 }
