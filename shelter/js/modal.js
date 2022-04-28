@@ -17,7 +17,6 @@ CAROUSEL.addEventListener('click', (event) => {
 
   if (event.target.closest('.slider__card')) {
     let clickedCardId = event.target.closest('.slider__card').getAttribute('data-id')
-    console.log(clickedCardId)
     createModalCardTemplate(clickedCardId)
     modalWindow.classList.add('modal-active')
     body.classList.add('modal-no-scroll')
@@ -60,5 +59,4 @@ modalWrapper.addEventListener('click', () => {
 
 modalContainerContent.addEventListener('click', (event) => {
   event.stopPropagation();
-  console.log(event.target)
 })
