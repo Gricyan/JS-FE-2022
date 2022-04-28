@@ -1,24 +1,62 @@
 const CAROUSEL = document.querySelector('.pets__gallery');
 
-// RANDOM NUMBER GENERATOR
+// CREATE STRICT ARRAY
 
-const generateArrayRandomNumber = (min, max) => {
-  let totalNumbers = max - min + 1,
-    arrayTotalNumbers = [],
-    arrayRandomNumbers = [],
-    tempRandomNumber;
-
-  while (totalNumbers--) {
-    arrayTotalNumbers.push(totalNumbers + min);
+let strictArr = []
+const createStrictArray = () => {
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 8; j++) {
+      strictArr.push(j)
+    }
   }
-
-  while (arrayTotalNumbers.length) {
-    tempRandomNumber = Math.round(Math.random() * (arrayTotalNumbers.length - 1));
-    arrayRandomNumbers.push(arrayTotalNumbers[tempRandomNumber]);
-    arrayTotalNumbers.splice(tempRandomNumber, 1);
-  }
-  return arrayRandomNumbers;
+  return strictArr
 }
+createStrictArray()
+
+
+// CREATE MATRIX
+
+const listToMatrix = (list, elementsPerSubArray) => {
+  let matrix = [],
+    i, k;
+  for (i = 0, k = -1; i < list.length; i++) {
+    if (i % elementsPerSubArray === 0) {
+      k++;
+      matrix[k] = [];
+    }
+    matrix[k].push(list[i]);
+  }
+  return matrix;
+}
+
+let matrix = listToMatrix(strictArr, 8);
+
+// SHUFFLE MATRIX
+
+const shuffle = () => {
+  for (let i = 0; i < matrix.length; i++) {
+    matrix[i].sort(() => Math.random() - 0.5);
+  }
+}
+shuffle()
+
+console.log(matrix)
+
+// GALLERY WINDOW SIZE ADOPT
+
+window.onresize = () => {
+  if (window.innerWidth > 960) {
+    matrix = listToMatrix(strictArr, 8);
+    console.log(matrix)
+  } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
+    matrix = listToMatrix(strictArr, 6);
+    console.log(matrix)
+  } else {
+    matrix = listToMatrix(strictArr, 3);
+    console.log(matrix)
+  }
+};
+
 
 // GALLERY CREATOR
 
@@ -35,47 +73,21 @@ const createGalleryCard = (idx) => {
   gallery.push(galleryCard)
 }
 
-// console.log(gallery)
 
-// CREATE 48-ITEMS RANDOM ARRAY
+// GALLERY GENERATOR 
 
-let bigRandomArray = []
-
-const createRandomArray = () => {
-  let bigTemporaryArray = []
-  for (let i = 0; i < 6; i++) {
-    let smallTemporaryArray = generateArrayRandomNumber(0, 7);
-    bigTemporaryArray.push(...smallTemporaryArray);
-  }
-  return bigRandomArray = bigTemporaryArray
-}
-
-createRandomArray()
-console.log(bigRandomArray)
-
-// GENERATE 8-ITEMS GALLERY
-
-const createSmallRandomGallery = () => {
-  let smallRandomGalleryArray = generateArrayRandomNumber(0, 7)
-  smallRandomGalleryArray.forEach(galleryInx => {
-    createGalleryCard(galleryInx)
-  })
-  console.log(smallRandomGalleryArray)
-}
-
-
-const createFullScreenGallery = () => {
-  createSmallRandomGallery()
-  for (let i = 0; i < 8; i++) {
+const createGallery = (page) => {
+  for (let i = 0; i < matrix[page].length; i++) {
+    createGalleryCard(matrix[page][i])
     CAROUSEL.append(gallery[i])
   }
 }
-createFullScreenGallery()
 
-const BTN_NEXT = document.querySelector('.paginator_next')
-BTN_NEXT.addEventListener('click', () => {
-  console.log('smallRandomGalleryArray')
-  CAROUSEL.innerHTML = '';
+createGallery(0)
 
-  createFullScreenGallery();
-})
+
+// const BTN_NEXT = document.querySelector('.paginator_next')
+// BTN_NEXT.addEventListener('click', () => {
+//   CAROUSEL.innerHTML = '';
+//   createGallery(0);
+// })
