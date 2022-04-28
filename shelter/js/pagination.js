@@ -40,22 +40,7 @@ const shuffle = () => {
 }
 shuffle()
 
-console.log(matrix)
-
-// GALLERY WINDOW SIZE ADOPT
-
-window.onresize = () => {
-  if (window.innerWidth > 960) {
-    matrix = listToMatrix(strictArr, 8);
-    console.log(matrix)
-  } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
-    matrix = listToMatrix(strictArr, 6);
-    console.log(matrix)
-  } else {
-    matrix = listToMatrix(strictArr, 3);
-    console.log(matrix)
-  }
-};
+// console.log(matrix)
 
 
 // GALLERY CREATOR
@@ -76,14 +61,49 @@ const createGalleryCard = (idx) => {
 
 // GALLERY GENERATOR 
 
-const createGallery = (page) => {
+const createGallery = (matrix, page) => {
   for (let i = 0; i < matrix[page].length; i++) {
     createGalleryCard(matrix[page][i])
     CAROUSEL.append(gallery[i])
   }
 }
 
-createGallery(0)
+// createGallery(0)
+
+const createInitGallery = (idx) => {
+  if (window.innerWidth > 960) {
+    matrix = listToMatrix(strictArr, 8);
+    createGallery(matrix, idx)
+  } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
+    matrix = listToMatrix(strictArr, 6);
+    createGallery(matrix, idx)
+  } else {
+    matrix = listToMatrix(strictArr, 3);
+    createGallery(matrix, idx)
+  }
+};
+
+let randomInitIdx = matrix[0][0]
+createInitGallery(randomInitIdx)
+
+// CHANGE NUMBER OF GALLERY ITEMS DEPENDS ON WINDOW SIZE
+
+const windowSizeRefresh = (matrix, randomInitIdx, numberOfItems) => {
+  CAROUSEL.innerHTML = '';
+  matrix = listToMatrix(strictArr, numberOfItems);
+  createGallery(matrix, randomInitIdx)
+}
+
+
+window.onresize = () => {
+  if (window.innerWidth > 960) {
+    windowSizeRefresh(matrix, randomInitIdx, 8)
+  } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
+    windowSizeRefresh(matrix, randomInitIdx, 6)
+  } else {
+    windowSizeRefresh(matrix, randomInitIdx, 3)
+  }
+};
 
 
 // const BTN_NEXT = document.querySelector('.paginator_next')

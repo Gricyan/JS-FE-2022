@@ -460,7 +460,7 @@ template {
   font-family: "Georgia", serif;
 }
 
-.btn-close, .modal-active .modal__container, .modal__container, .modal__wrapper, .footer__container h4 a, .donation__card, .list-item__img, .pets__button-primary, .intro__content .intro__button, .nav__link::after, .nav__list a, .navigation, .nav-wrapper, .up-btn, .slider__button, .slider__card, .logo {
+.btn-close, .modal-active .modal__container, .modal__container, .modal__wrapper, .footer__container h4 a, .donation__card, .list-item__img, .pets__button-primary, .intro__content .intro__button, .nav__link::after, .nav__list a, .navigation, .nav-wrapper, .up-btn, .slider__button, .slider__card, .logo, .burger-container {
   transition: all 0.3s ease-out;
 }
 
@@ -552,8 +552,10 @@ a {
 }
 
 .burger-container {
+  position: fixed;
   width: 10%;
-  display: none;
+  top: 41px;
+  transform: translateY(-100px);
 }
 @media (max-width: 767.98px) {
   .burger-container {
@@ -561,6 +563,7 @@ a {
     position: fixed;
     top: 41px;
     right: 50px;
+    transform: translateY(0);
   }
 }
 @media (max-width: 320px) {
