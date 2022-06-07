@@ -10,6 +10,7 @@ html {
 body {
   @extend %font-primary;
   @include font(1.5rem, 2.4rem, $spacing: 0);
+  caret-color: transparent;
 }
 
 h2 {

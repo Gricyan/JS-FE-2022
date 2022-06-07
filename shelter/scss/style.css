@@ -480,6 +480,7 @@ body {
   font-style: normal;
   line-height: 2.4rem;
   letter-spacing: 0;
+  caret-color: transparent;
 }
 
 h2 {
@@ -1050,6 +1051,7 @@ a {
     position: fixed;
     min-width: 320px;
     min-height: 823px;
+    height: 100vh;
     right: 0;
     top: 0;
     padding-top: 216px;

@@ -1,4 +1,5 @@
 const CAROUSEL = document.querySelector('.pets__gallery');
+const currentPageNumber = document.querySelector('.current-page-number');
 
 // CREATE STRICT ARRAY
 
@@ -14,31 +15,29 @@ const createStrictArray = () => {
 createStrictArray()
 
 
-// CREATE MATRIX
+// CREATE SHUFFLED MATRIX
+
+//let MATRIX = []
 
 const listToMatrix = (list, elementsPerSubArray) => {
-  let matrix = [],
+  let mtx = [],
     i, k;
   for (i = 0, k = -1; i < list.length; i++) {
     if (i % elementsPerSubArray === 0) {
       k++;
-      matrix[k] = [];
+      mtx[k] = [];
     }
-    matrix[k].push(list[i]);
+    mtx[k].push(list[i]);
   }
-  return matrix;
+
+  for (let i = 0; i < mtx.length; i++) {
+    mtx[i].sort(() => Math.random() - 0.5);
+  }
+
+  return mtx;
 }
 
 let matrix = listToMatrix(strictArr, 8);
-
-// SHUFFLE MATRIX
-
-const shuffle = () => {
-  for (let i = 0; i < matrix.length; i++) {
-    matrix[i].sort(() => Math.random() - 0.5);
-  }
-}
-shuffle()
 
 // console.log(matrix)
 
@@ -62,28 +61,36 @@ const createGalleryCard = (idx) => {
 // GALLERY GENERATOR 
 
 const createGallery = (matrix, page) => {
-  for (let i = 0; i < matrix[page].length; i++) {
-    createGalleryCard(matrix[page][i])
+  console.log(matrix)
+  console.log('first row: ', matrix[matrix.length - page])
+  console.log('last row: ', matrix[page - 1])
+
+  for (let i = 0; i < matrix[page - 1].length; i++) {
+    createGalleryCard(matrix[matrix.length - page][i])
     CAROUSEL.append(gallery[i])
+
+    // SHOW CURRENT PAGE NUMBER_OF_ITEMS
+    currentPageNumber.innerHTML = i + 1;
   }
 }
 
 // createGallery(0)
 
-const createInitGallery = (idx) => {
+const createInitGallery = (idx = 0) => {
   if (window.innerWidth > 960) {
     matrix = listToMatrix(strictArr, 8);
-    createGallery(matrix, idx)
+    createGallery(matrix, 6)
   } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
     matrix = listToMatrix(strictArr, 6);
-    createGallery(matrix, idx)
+    createGallery(matrix, 8)
   } else {
     matrix = listToMatrix(strictArr, 3);
-    createGallery(matrix, idx)
+    createGallery(matrix, 16)
   }
 };
 
 let randomInitIdx = matrix[0][0]
+
 createInitGallery(randomInitIdx)
 
 // CHANGE NUMBER OF GALLERY ITEMS DEPENDS ON WINDOW SIZE
@@ -106,8 +113,15 @@ window.onresize = () => {
 };
 
 
-// const BTN_NEXT = document.querySelector('.paginator_next')
-// BTN_NEXT.addEventListener('click', () => {
-//   CAROUSEL.innerHTML = '';
-//   createGallery(0);
-// })
+
+
+
+const BTN_NEXT = document.querySelector('.paginator_next')
+BTN_NEXT.addEventListener('click', () => {
+  //CAROUSEL.innerHTML = '';
+  //console.log(randomInitIdx)
+  //randomInitIdx = randomInitIdx + 1;
+  createGallery(matrix, randomInitIdx)
+  console.log(matrix)
+
+})
