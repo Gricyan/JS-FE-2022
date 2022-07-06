@@ -1,6 +1,8 @@
 const CAROUSEL = document.querySelector('.carousel-container');
 const BTN_LEFT = document.querySelector('.slider__arrow_left')
 const BTN_RIGHT = document.querySelector('.slider__arrow_right')
+const BTN_LEFT_THREE = document.querySelector('.slider__arrow_left-three')
+const BTN_RIGHT_THREE = document.querySelector('.slider__arrow_right-three')
 
 let idx = 0
 
@@ -35,31 +37,63 @@ const createCardTemplate = (dir) => {
   }
 }
 
-function left() {
+function left(move) {
   let currentSlides = document.querySelectorAll('.slider__card');
   BTN_RIGHT.removeEventListener('click', left)
   BTN_LEFT.removeEventListener('click', right)
-  CAROUSEL.classList.add('transition-left')
 
-  createCardTemplate('left');
+  if (move === 'move-three-items') {
+    for (let i = 0; i < 3; i++) {
+      CAROUSEL.classList.add('three-transition-left') 
+      createCardTemplate('left');
+    }
+  } else {
+    CAROUSEL.classList.add('transition-left') 
+    createCardTemplate('left');
+  }
+
   setTimeout(() => {
-    currentSlides[0].remove();
-    CAROUSEL.classList.remove('transition-left')
+    if (move === 'move-three-items') {
+      for (let i = 0; i < 3; i++) {
+        currentSlides[i].remove();
+        CAROUSEL.classList.remove('three-transition-left')
+      }
+    } else {
+      currentSlides[0].remove();
+      CAROUSEL.classList.remove('transition-left')
+    }
+    
     BTN_RIGHT.addEventListener('click', left)
     BTN_LEFT.addEventListener('click', right)
   }, 990)
 }
 
-function right() {
+function right(move) {
   let currentSlides = document.querySelectorAll('.slider__card');
   BTN_LEFT.removeEventListener('click', right)
   BTN_RIGHT.removeEventListener('click', left)
-  CAROUSEL.classList.add('transition-right')
 
-  createCardTemplate('right');
+  if (move === 'move-three-items') {
+    for (let i = 0; i < 3; i++) {
+      CAROUSEL.classList.add('three-transition-right') 
+      createCardTemplate('right');
+    }
+  } else {
+    CAROUSEL.classList.add('transition-right') 
+    createCardTemplate('right');
+  }
+  
   setTimeout(() => {
-    currentSlides[currentSlides.length - 1].remove();
-    CAROUSEL.classList.remove('transition-right')
+    if (move === 'move-three-items') {
+      for (let i = 0; i < 3; i++) {
+        currentSlides[currentSlides.length - 1].remove();
+        CAROUSEL.classList.remove('three-transition-right')
+      }
+    } else {
+      currentSlides[currentSlides.length - 1].remove();
+      CAROUSEL.classList.remove('transition-right')
+    }
+
     BTN_LEFT.addEventListener('click', right)
     BTN_RIGHT.addEventListener('click', left)
   }, 990)
@@ -73,5 +107,10 @@ const createInitTemplate = () => {
 
 createInitTemplate()
 
-BTN_RIGHT.addEventListener('click', left)
-BTN_LEFT.addEventListener('click', right)
+
+
+BTN_RIGHT.addEventListener('click', () => left('click'))
+BTN_LEFT.addEventListener('click', () => right('click'))
+
+BTN_RIGHT_THREE.addEventListener('click', () => left('move-three-items'))
+BTN_LEFT_THREE.addEventListener('click', () => right('move-three-items'))

@@ -13,7 +13,7 @@ const createStrictArray = () => {
   return strictArr
 }
 createStrictArray()
-
+console.log('strictArr: ', strictArr)
 
 // CREATE SHUFFLED MATRIX
 
