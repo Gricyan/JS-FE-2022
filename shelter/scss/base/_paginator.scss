@@ -1,3 +1,11 @@
+.rounded-btn {
+  border: 2px solid $color-dark-s;
+  // &:hover {
+  //   border: 2px solid $color-primary-light;
+  //   background-color: $color-primary-light;
+  // }
+}
+
 .gallery-paginator__container {
   max-width: 340px;
   @include flex-box();
@@ -13,16 +21,24 @@
 }
 
 .paginator_pre-pre {
-  background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
   background-size: 25px 11px;
+  background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
+    &.paginator_active {
+    background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
+    border: 2px solid $color-primary;
+  }
   // &:hover {
   //   background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
   // }
 }
 
 .paginator_pre {
-  background-image: url(../assets/icons/paginator-icons/pre.svg);
   background-size: 11px;
+  background-image: url(../assets/icons/paginator-icons/pre.svg);
+    &.paginator_active {
+    background-image: url(../assets/icons/paginator-icons/pre-active.svg);
+    border: 2px solid $color-primary;
+  }
   // &:hover {
   //   background-image: url(../assets/icons/paginator-icons/pre-active.svg);
   // }
@@ -30,21 +46,24 @@
 
 .paginator_next {
   background-image: url(../assets/icons/paginator-icons/next.svg);
+    &.paginator_active {
+    background-image: url(../assets/icons/paginator-icons/next-active.svg);
+    border: 2px solid $color-primary;
+  }  
 }
 
 .paginator_next-next {
   background-image: url(../assets/icons/paginator-icons/next-next.svg);
+    &.paginator_active {
+    background-image: url(../assets/icons/paginator-icons/next-next-active.svg);
+    border: 2px solid $color-primary;
+  }  
 }
 
-.paginator_inactive {
-  border: 2px solid $color-dark-s;
-  // &:hover {
-  //   border: 2px solid $color-primary-light;
-  //   background-color: $color-primary-light;
-  // }
-}
+
 
 .paginator_current {
   background-color: $color-primary;
+  border: 2px solid $color-primary;
   cursor: default;
 }

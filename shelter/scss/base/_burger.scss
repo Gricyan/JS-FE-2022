@@ -3,13 +3,17 @@
 }
 
 .burger-container {
+  position: fixed;
   width: 10%;
-  display: none;
+  top: 41px;
+  transform: translateY(-100px);
+  @extend %transition;
   @include media-tablet {
     display: inline-block;
     position: fixed;
     top: 41px;
     right: 50px;
+    transform: translateY(0);
   }
   @include media-mobile-small {
     right: 53px;

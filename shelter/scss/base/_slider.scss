@@ -1,3 +1,21 @@
+  .btns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include media-tablet {      
+      align-self: flex-end;
+      position: absolute;
+      &.btns-container_left {
+        flex-direction: row-reverse;
+        left: 18%;
+      }
+      &.btns-container_right {
+        flex-direction: row;
+        right: 18%;
+      }
+    }
+  } 
+  
   .rounded-btn {
     content: "";
     @include flex-box($flex: inline-flex, $justify: center);
@@ -7,6 +25,7 @@
     border: 2px solid $color-primary;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: auto 15px;
     &.rounded-btn_active {
       &:hover {
         cursor: pointer;
@@ -18,19 +37,33 @@
   
   .slider__arrow_left {
     background-image: url(../assets/icons/slider-icons/arrow-left.svg);
-    @include media-tablet {
-      align-self: flex-end;
-      position: absolute;
-      left: 18%;
+    display: none;
+    @include media-desktop {      
+      display: flex;
+    }
+  }
+
+  .slider__arrow_left-three {
+    background-image: url(../assets/icons/slider-icons/arrow-left-three.svg);
+    display: flex;
+    @include media-desktop {     
+      display: none;
     }
   }
   
   .slider__arrow_right {
     background-image: url(../assets/icons/slider-icons/arrow-right.svg);
-    @include media-tablet {
-      align-self: flex-end;
-      position: absolute;
-      right: 18%;
+    display: none;
+    @include media-desktop {
+      display: flex;
+    }
+  }
+
+  .slider__arrow_right-three {
+    background-image: url(../assets/icons/slider-icons/arrow-right-three.svg);
+    display: flex;
+    @include media-desktop {     
+      display: none;
     }
   }
   
@@ -196,3 +229,81 @@
       animation-name: move-left-laptop;
     }
   }
+
+/* SLIDER ANIMATION FOR DOUBLE CLICK*/
+  
+@keyframes three-move-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes three-move-right-desktop {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes three-move-right-laptop {
+  from {
+    left: -930px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.three-transition-right {
+  animation-name: three-move-right;
+  animation-duration: 1s;
+  @include media-desktop {
+    animation-name: three-move-right-desktop;
+  }
+  @include media-desktop {
+    animation-name: three-move-right-laptop;
+  }
+}
+
+@keyframes three-move-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -1080px;
+  }
+}
+
+@keyframes three-move-left-desktop {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -990px;
+  }
+}
+
+@keyframes three-move-left-laptop {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -930px;
+  }
+}
+
+.three-transition-left {
+  animation-name: three-move-left;
+  animation-duration: 1s;
+  @include media-desktop {
+    animation-name: three-move-left-desktop;
+  }
+  @include media-desktop {
+    animation-name: three-move-left-laptop;
+  }
+}
