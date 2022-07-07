@@ -1,50 +1,48 @@
 const CAROUSEL = document.querySelector('.pets__gallery');
-const currentPageNumber = document.querySelector('.current-page-number');
+const arrowButtons  = document.querySelectorAll('.arrow-btn');
+const currentPageNumberContainer = document.querySelector('.current-page-number');
+
+const BtnPagePrePre = document.querySelector('.paginator_pre-pre');
+const BtnPagePre = document.querySelector('.paginator_pre');
+const BtnPageNext = document.querySelector('.paginator_next');
+const BtnPageNextNext = document.querySelector('.paginator_next-next');
+
 
 // CREATE STRICT ARRAY
 
-let strictArr = []
-const createStrictArray = () => {
+let orderedArray = []
+const intOrderedArray = () => {
   for (let i = 0; i < 6; i++) {
     for (let j = 0; j < 8; j++) {
-      strictArr.push(j)
+      orderedArray.push(j)
     }
   }
-  return strictArr
+  return orderedArray
 }
-createStrictArray()
-console.log('strictArr: ', strictArr)
+intOrderedArray()
+
 
 // CREATE SHUFFLED MATRIX
 
-//let MATRIX = []
-
-const listToMatrix = (list, elementsPerSubArray) => {
-  let mtx = [],
-    i, k;
-  for (i = 0, k = -1; i < list.length; i++) {
-    if (i % elementsPerSubArray === 0) {
+const shuffledMatrix = function (orderedArray, elementsPerRow) {
+  let mtx = [], i, k;
+  for (i = 0, k = -1; i < orderedArray.length; i++) {
+    if (i % elementsPerRow === 0) {
       k++;
       mtx[k] = [];
     }
-    mtx[k].push(list[i]);
+    mtx[k].push(orderedArray[i]);
   }
-
   for (let i = 0; i < mtx.length; i++) {
     mtx[i].sort(() => Math.random() - 0.5);
   }
-
   return mtx;
 }
-
-let matrix = listToMatrix(strictArr, 8);
-
-// console.log(matrix)
+let matrix = shuffledMatrix(orderedArray, 8);
 
 
-// GALLERY CREATOR
 
-let gallery = []
+// GALLERY CARDS CREATOR
 
 const createGalleryCard = (idx) => {
   const galleryCard = document.createElement("div");
@@ -54,74 +52,173 @@ const createGalleryCard = (idx) => {
   <img src="./${pets[idx].img}" alt="${pets[idx].name}">
   <div class="slider__title">${pets[idx].name}</div>
   <a href="#" class="button slider__button button_disabled">Learn more</a>`
-  gallery.push(galleryCard)
+  CAROUSEL.append(galleryCard);
 }
 
 
 // GALLERY GENERATOR 
 
-const createGallery = (matrix, page) => {
-  console.log(matrix)
-  console.log('first row: ', matrix[matrix.length - page])
-  console.log('last row: ', matrix[page - 1])
-
-  for (let i = 0; i < matrix[page - 1].length; i++) {
-    createGalleryCard(matrix[matrix.length - page][i])
-    CAROUSEL.append(gallery[i])
-
-    // SHOW CURRENT PAGE NUMBER_OF_ITEMS
-    currentPageNumber.innerHTML = i + 1;
+const createGallery = (row) => {
+  CAROUSEL.innerHTML = '';
+  for (let i = 0; i < matrix[row - 1].length; i++) {
+    createGalleryCard(matrix[row - 1][i]);    
   }
+  currentPageNumberContainer.innerHTML = row;
 }
 
-// createGallery(0)
 
-const createInitGallery = (idx = 0) => {
+// ADD EVENT LISTENERS FOR ARROW BUTTONS
+
+BtnPagePre.addEventListener('click', preBtnHandler);
+BtnPagePrePre.addEventListener('click', prePreBtnHandler);
+
+
+function preBtnHandler() {
+  let currentPageNumber = currentPageNumberContainer.innerHTML
+  currentPageNumber -= 1;  
+  createGallery(currentPageNumber);
+  currentPageNumberContainer.innerHTML = currentPageNumber;
+
+  if (currentPageNumber > 1 && currentPageNumber < matrix.length) {    
+    enableAllArrows();
+    arrowsStyleReset();
+    addArrowStyleActive()
+  } else if (currentPageNumber <= 1) {
+    disableLeftArrowsStyle();
+    disableLeftArrows();
+  }  
+}
+
+function prePreBtnHandler() {
+  currentPageNumber = 1;
+  createGallery(currentPageNumber);
+  currentPageNumberContainer.innerHTML = currentPageNumber;
+  disableLeftArrowsStyle();
+  disableLeftArrows();
+}
+
+
+BtnPageNext.addEventListener('click', nextBtnHandler)
+BtnPageNextNext.addEventListener('click', nextNextBtnHandler)
+
+function nextBtnHandler() {
+  let currentPageNumber = +currentPageNumberContainer.innerHTML;
+  currentPageNumber += 1;
+  createGallery(currentPageNumber);
+  currentPageNumberContainer.innerHTML = currentPageNumber;
+
+  if (currentPageNumber > 1 && currentPageNumber < matrix.length) {    
+    enableAllArrows();
+    arrowsStyleReset();
+    addArrowStyleActive()
+  } else if (currentPageNumber >= matrix.length) {
+    disableRightArrowsStyle()
+    disableRightArrows();
+  }  
+}
+
+function nextNextBtnHandler() {
+  currentPageNumber = matrix.length;
+  createGallery(currentPageNumber);
+  currentPageNumberContainer.innerHTML = currentPageNumber;
+  disableRightArrowsStyle()
+  disableRightArrows();
+}
+
+function arrowsStyleReset() {
+  arrowButtons.forEach(item => {
+    item.classList.remove('paginator_active'); 
+  });
+} 
+
+function addArrowStyleActive() {
+  arrowButtons.forEach(item => {
+    item.classList.add('paginator_active'); 
+  });
+} 
+
+function disableRightArrowsStyle() {
+  BtnPageNext.classList.remove('paginator_active');  
+  BtnPageNextNext.classList.remove('paginator_active');
+  BtnPagePre.classList.add('paginator_active');  
+  BtnPagePrePre.classList.add('paginator_active');
+}
+
+function disableLeftArrowsStyle() {
+  BtnPageNext.classList.add('paginator_active');  
+  BtnPageNextNext.classList.add('paginator_active');
+  BtnPagePre.classList.remove('paginator_active');  
+  BtnPagePrePre.classList.remove('paginator_active');
+}
+
+function disableRightArrows() {
+  BtnPagePre.addEventListener('click', preBtnHandler);
+  BtnPagePrePre.addEventListener('click', prePreBtnHandler);
+  BtnPageNext.removeEventListener('click', nextBtnHandler);
+  BtnPageNextNext.removeEventListener('click', nextNextBtnHandler);
+}
+
+function disableLeftArrows() {
+  BtnPagePre.removeEventListener('click', preBtnHandler);
+  BtnPagePrePre.removeEventListener('click', prePreBtnHandler);
+  BtnPageNext.addEventListener('click', nextBtnHandler);
+  BtnPageNextNext.addEventListener('click', nextNextBtnHandler);
+}
+
+function enableAllArrows() {
+  BtnPagePre.addEventListener('click', preBtnHandler);
+  BtnPagePrePre.addEventListener('click', prePreBtnHandler);
+  BtnPageNext.addEventListener('click', nextBtnHandler);
+  BtnPageNextNext.addEventListener('click', nextNextBtnHandler);
+}
+
+
+// INIT FIRST GALLERY
+
+(function initFirstGallery() {
   if (window.innerWidth > 960) {
-    matrix = listToMatrix(strictArr, 8);
-    createGallery(matrix, 6)
+    matrix = shuffledMatrix(orderedArray, 8);    
   } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
-    matrix = listToMatrix(strictArr, 6);
-    createGallery(matrix, 8)
+    matrix = shuffledMatrix(orderedArray, 6);
   } else {
-    matrix = listToMatrix(strictArr, 3);
-    createGallery(matrix, 16)
-  }
-};
+    matrix = shuffledMatrix(orderedArray, 3);
+  }  
+  createGallery(1);
+  disableLeftArrows()
+})()
 
-let randomInitIdx = matrix[0][0]
-
-createInitGallery(randomInitIdx)
 
 // CHANGE NUMBER OF GALLERY ITEMS DEPENDS ON WINDOW SIZE
 
-const windowSizeRefresh = (matrix, randomInitIdx, numberOfItems) => {
-  CAROUSEL.innerHTML = '';
-  matrix = listToMatrix(strictArr, numberOfItems);
-  createGallery(matrix, randomInitIdx)
-}
 
-
-window.onresize = () => {
+window.onresize = () => {  
   if (window.innerWidth > 960) {
-    windowSizeRefresh(matrix, randomInitIdx, 8)
+    matrix = shuffledMatrix(orderedArray, 8); 
+    currentPage = checkCurrentPageNumber(8);
+    createGallery(currentPage);
+
   } else if (window.innerWidth <= 960 && window.innerWidth >= 768) {
-    windowSizeRefresh(matrix, randomInitIdx, 6)
+    matrix = shuffledMatrix(orderedArray, 6);    
+    currentPage = checkCurrentPageNumber(6);
+    createGallery(currentPage);
+
   } else {
-    windowSizeRefresh(matrix, randomInitIdx, 3)
-  }
+    matrix = shuffledMatrix(orderedArray, 3); 
+    currentPage = checkCurrentPageNumber(3);
+    createGallery(currentPage);
+  }    
 };
 
+let checkCurrentPageNumber = function(rowsNumber) {
 
+  let currentPageNum = +currentPageNumberContainer.innerHTML;
 
-
-
-const BTN_NEXT = document.querySelector('.paginator_next')
-BTN_NEXT.addEventListener('click', () => {
-  //CAROUSEL.innerHTML = '';
-  //console.log(randomInitIdx)
-  //randomInitIdx = randomInitIdx + 1;
-  createGallery(matrix, randomInitIdx)
-  console.log(matrix)
-
-})
+  if (matrix.length === 16 && currentPageNum === 8) {
+    currentPageNum = matrix.length;
+  } else if (matrix.length === 8 && currentPageNum === 6) {
+    currentPageNum = matrix.length;
+  } else if (currentPageNum > 48 / rowsNumber) {
+    currentPageNum = 48 / rowsNumber;
+  } 
+  return currentPageNum;
+}

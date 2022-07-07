@@ -1017,6 +1017,10 @@ a {
   }
 }
 
+.rounded-btn {
+  border: 2px solid #cdcdcd;
+}
+
 .gallery-paginator__container {
   max-width: 340px;
   display: flex;
@@ -1039,29 +1043,42 @@ a {
 }
 
 .paginator_pre-pre {
-  background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
   background-size: 25px 11px;
+  background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
+}
+.paginator_pre-pre.paginator_active {
+  background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
+  border: 2px solid #f1cdb3;
 }
 
 .paginator_pre {
-  background-image: url(../assets/icons/paginator-icons/pre.svg);
   background-size: 11px;
+  background-image: url(../assets/icons/paginator-icons/pre.svg);
+}
+.paginator_pre.paginator_active {
+  background-image: url(../assets/icons/paginator-icons/pre-active.svg);
+  border: 2px solid #f1cdb3;
 }
 
 .paginator_next {
   background-image: url(../assets/icons/paginator-icons/next.svg);
 }
+.paginator_next.paginator_active {
+  background-image: url(../assets/icons/paginator-icons/next-active.svg);
+  border: 2px solid #f1cdb3;
+}
 
 .paginator_next-next {
   background-image: url(../assets/icons/paginator-icons/next-next.svg);
 }
-
-.paginator_inactive {
-  border: 2px solid #cdcdcd;
+.paginator_next-next.paginator_active {
+  background-image: url(../assets/icons/paginator-icons/next-next-active.svg);
+  border: 2px solid #f1cdb3;
 }
 
 .paginator_current {
   background-color: #f1cdb3;
+  border: 2px solid #f1cdb3;
   cursor: default;
 }
 
