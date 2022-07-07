@@ -425,7 +425,7 @@ template {
   font-family: "Georgia", serif;
 }
 
-.btn-close, .modal-active .modal__container, .modal__container, .modal__wrapper, .footer__container h4 a, .donation__card, .list-item__img, .pets__button-primary, .intro__content .intro__button, .nav__link::after, .nav__list a, .navigation, .nav-wrapper, .up-btn, .slider__button, .slider__card, .logo, .burger-container {
+.btn-close, .modal-active .modal__container, .modal__container, .modal__wrapper, .footer__container h4 a, .donation__card, .list-item__img, .pets__button-primary, .intro__content .intro__button, .nav__link::after, .nav__list a, .navigation, .nav-wrapper, .up-btn, .rounded-btn, .slider__button, .slider__card, .logo, .burger-container {
   transition: all 0.3s ease-out;
 }
 
@@ -511,6 +511,10 @@ a {
   border-radius: 100px;
   color: #292929;
   text-align: center;
+}
+
+.pets__slider .rounded-btn {
+  border: 2px solid #f1cdb3;
 }
 
 .no-scroll {
@@ -1017,10 +1021,6 @@ a {
   }
 }
 
-.rounded-btn {
-  border: 2px solid #cdcdcd;
-}
-
 .gallery-paginator__container {
   max-width: 340px;
   display: flex;
@@ -1042,6 +1042,10 @@ a {
   }
 }
 
+.rounded-btn {
+  border: 2px solid #cdcdcd;
+}
+
 .paginator_pre-pre {
   background-size: 25px 11px;
   background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
@@ -1049,6 +1053,11 @@ a {
 .paginator_pre-pre.paginator_active {
   background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
   border: 2px solid #f1cdb3;
+}
+.paginator_pre-pre.paginator_active:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+  cursor: pointer;
 }
 
 .paginator_pre {
@@ -1059,6 +1068,11 @@ a {
   background-image: url(../assets/icons/paginator-icons/pre-active.svg);
   border: 2px solid #f1cdb3;
 }
+.paginator_pre.paginator_active:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+  cursor: pointer;
+}
 
 .paginator_next {
   background-image: url(../assets/icons/paginator-icons/next.svg);
@@ -1067,6 +1081,11 @@ a {
   background-image: url(../assets/icons/paginator-icons/next-active.svg);
   border: 2px solid #f1cdb3;
 }
+.paginator_next.paginator_active:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+  cursor: pointer;
+}
 
 .paginator_next-next {
   background-image: url(../assets/icons/paginator-icons/next-next.svg);
@@ -1074,6 +1093,11 @@ a {
 .paginator_next-next.paginator_active {
   background-image: url(../assets/icons/paginator-icons/next-next-active.svg);
   border: 2px solid #f1cdb3;
+}
+.paginator_next-next.paginator_active:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+  cursor: pointer;
 }
 
 .paginator_current {
@@ -1135,6 +1159,9 @@ a {
     top: 0;
     background-color: #292929;
     opacity: 0.6;
+  }
+  .our-pets .nav-wrapper.nav__link_active {
+    background-color: #fafafa;
   }
 }
 

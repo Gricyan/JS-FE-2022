@@ -1,11 +1,3 @@
-.rounded-btn {
-  border: 2px solid $color-dark-s;
-  // &:hover {
-  //   border: 2px solid $color-primary-light;
-  //   background-color: $color-primary-light;
-  // }
-}
-
 .gallery-paginator__container {
   max-width: 340px;
   @include flex-box();
@@ -20,16 +12,23 @@
   }
 }
 
+.rounded-btn {
+  border: 2px solid $color-dark-s;
+  @extend %transition;
+}
+
 .paginator_pre-pre {
   background-size: 25px 11px;
   background-image: url(../assets/icons/paginator-icons/pre-pre.svg);
     &.paginator_active {
     background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
     border: 2px solid $color-primary;
+    &:hover {
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+      cursor: pointer;
+    }
   }
-  // &:hover {
-  //   background-image: url(../assets/icons/paginator-icons/pre-pre-active.svg);
-  // }
 }
 
 .paginator_pre {
@@ -38,10 +37,12 @@
     &.paginator_active {
     background-image: url(../assets/icons/paginator-icons/pre-active.svg);
     border: 2px solid $color-primary;
+    &:hover {
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+      cursor: pointer;
+    }
   }
-  // &:hover {
-  //   background-image: url(../assets/icons/paginator-icons/pre-active.svg);
-  // }
 }
 
 .paginator_next {
@@ -49,6 +50,11 @@
     &.paginator_active {
     background-image: url(../assets/icons/paginator-icons/next-active.svg);
     border: 2px solid $color-primary;
+    &:hover {
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+      cursor: pointer;
+    }
   }  
 }
 
@@ -57,10 +63,13 @@
     &.paginator_active {
     background-image: url(../assets/icons/paginator-icons/next-next-active.svg);
     border: 2px solid $color-primary;
+    &:hover {
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
+      cursor: pointer;
+    }
   }  
 }
-
-
 
 .paginator_current {
   background-color: $color-primary;
